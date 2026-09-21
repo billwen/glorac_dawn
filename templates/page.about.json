@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -23,16 +32,17 @@
         "subtitle"
       ],
       "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_Sep_21_2026_09_31_11_PM.png",
         "image_overlay_opacity": 30,
-        "image_height": "large",
+        "image_height": "medium",
         "image_behavior": "none",
         "desktop_content_position": "bottom-left",
         "desktop_content_alignment": "left",
         "show_text_box": false,
         "color_scheme": "scheme-1",
-        "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
-        "show_text_below": false
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     },
     "story": {
@@ -81,7 +91,8 @@
           "type": "caption",
           "settings": {
             "caption": "OUR PHILOSOPHY",
-            "text_style": "caption-with-letter-spacing"
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
           }
         },
         "heading": {
@@ -126,21 +137,27 @@
           "type": "column",
           "settings": {
             "title": "THE FINEST FABRICS",
-            "text": "<p>Selected for touch, movement and natural beauty.</p>"
+            "text": "<p>Selected for touch, movement and natural beauty.</p>",
+            "link_label": "",
+            "link": ""
           }
         },
         "details": {
           "type": "column",
           "settings": {
             "title": "REFINED DETAILS",
-            "text": "<p>Considered finishing, piping and construction.</p>"
+            "text": "<p>Considered finishing, piping and construction.</p>",
+            "link_label": "",
+            "link": ""
           }
         },
         "beauty": {
           "type": "column",
           "settings": {
             "title": "LASTING BEAUTY",
-            "text": "<p>Pieces designed to remain beyond a single season.</p>"
+            "text": "<p>Pieces designed to remain beyond a single season.</p>",
+            "link_label": "",
+            "link": ""
           }
         }
       },
@@ -154,10 +171,16 @@
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
+        "button_label": "Button label",
+        "button_link": "",
         "columns_desktop": 3,
         "column_alignment": "center",
         "background_style": "none",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "closing_banner": {
@@ -202,8 +225,8 @@
         "desktop_content_alignment": "center",
         "show_text_box": false,
         "color_scheme": "scheme-1",
-        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
