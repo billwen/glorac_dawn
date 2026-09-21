@@ -18,8 +18,8 @@
           "type": "link_list",
           "name": "CUSTOMER CARE ",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "CUSTOMER CARE",
+            "menu": "customer-care"
           }
         }
       },
