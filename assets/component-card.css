@@ -506,6 +506,161 @@
   margin-top: 1rem;
 }
 
+/* Editorial product card */
+
+.card--editorial-wrapper {
+  min-width: 0;
+}
+
+.card--editorial.card--media:not(.card--horizontal) .card__inner.ratio::before {
+  padding-bottom: 150%;
+}
+
+.card--editorial.card--standard .card__inner,
+.card--editorial.card--card {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.card--editorial .card__media,
+.card--editorial .card__media .media,
+.card--editorial .card__media img {
+  border-radius: 0;
+}
+
+.card--editorial.card--standard > .card__content,
+.card--editorial.card--card > .card__content {
+  padding: 0;
+}
+
+.card--editorial > .card__content .card__information {
+  min-width: 0;
+  padding: 1.2rem 0 0;
+  text-align: center;
+}
+
+.card--editorial .card__vendor {
+  margin-bottom: 0.4rem;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.card--editorial .card__heading,
+.card--editorial .card__heading.h5,
+.card--editorial .card-information,
+.card--editorial .price {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.card--editorial .card__heading {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card--editorial .card__heading a {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card--editorial-wrapper:hover .card__heading a {
+  text-decoration: none;
+}
+
+.card--editorial .card-information__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+
+.card--editorial .card-information__footer--with-swatches {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 45%);
+  align-items: center;
+  column-gap: 0.8rem;
+}
+
+.card--editorial .card-information__footer--with-swatches > .price {
+  min-width: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.card--editorial .card__information:has(.card-information__footer--with-swatches) .card__vendor,
+.card--editorial .card__information:has(.card-information__footer--with-swatches) .card__heading {
+  text-align: left;
+}
+
+.card--editorial .price .price-item {
+  margin-right: 0;
+}
+
+.card--editorial .card__swatches {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-width: 0;
+  gap: 0.8rem;
+  justify-content: safe flex-end;
+  overflow-x: auto;
+  padding: 0.4rem;
+}
+
+.card--editorial .card__swatch-link {
+  display: block;
+  flex: 0 0 auto;
+  color: rgb(var(--color-foreground));
+  outline: 0.1rem solid transparent;
+  outline-offset: 0.3rem;
+}
+
+.card--editorial .card__swatch-link.is-active {
+  outline-color: currentColor;
+}
+
+.card--editorial .card__swatch-link:focus-visible {
+  outline-width: 0.2rem;
+}
+
+.card--editorial .card__swatch-link .swatch {
+  --swatch--size: 1rem;
+  --swatch--border-radius: 0;
+}
+
+.card--editorial .card__badge {
+  margin: 0.8rem;
+}
+
+.card--editorial .badge {
+  padding: 0.3rem 0.5rem;
+  border-radius: 0;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: var(--font-body-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 749px) {
+  .card--editorial > .card__content .card__information {
+    padding-top: 0.8rem;
+  }
+}
+
 /* Card Shapes */
 
 .card--shape .card__content {

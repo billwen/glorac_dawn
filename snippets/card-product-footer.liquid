@@ -1,0 +1,42 @@
+{% comment %}
+  Renders the editorial card price and any product-option swatches.
+
+  Accepts:
+  - card_product: {Object} Product Liquid object.
+{% endcomment %}
+
+{%- liquid
+  assign swatch_option = null
+  for option in card_product.options_with_values
+    for value in option.values
+      if value.swatch
+        assign swatch_option = option
+        break
+      endif
+    endfor
+    if swatch_option
+      break
+    endif
+  endfor
+-%}
+
+<div class="card-information__footer{% if swatch_option %} card-information__footer--with-swatches{% endif %}">
+  {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+  {%- if swatch_option -%}
+    <div class="card__swatches" aria-label="{{ swatch_option.name | escape }}">
+      {%- assign displayed_swatch_count = 0 -%}
+      {%- for value in swatch_option.values -%}
+        {%- if value.swatch -%}
+          {%- assign displayed_swatch_count = displayed_swatch_count | plus: 1 -%}
+          <a
+            href="{{ value.variant.url | default: card_product.url }}"
+            class="card__swatch-link{% if value.selected or displayed_swatch_count == 1 %} is-active{% endif %}"
+            aria-label="{{ swatch_option.name | escape }}: {{ value | escape }}"
+          >
+            {% render 'swatch', swatch: value.swatch, shape: 'square' %}
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>

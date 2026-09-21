@@ -1,0 +1,261 @@
+{
+  "sections": {
+    "hero": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "THE GLORAC STORY",
+            "heading_size": "h0"
+          }
+        },
+        "subtitle": {
+          "type": "text",
+          "settings": {
+            "text": "A quieter expression of luxury.",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "subtitle"
+      ],
+      "settings": {
+        "image_overlay_opacity": 30,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-1",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "story": {
+      "type": "rich-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "OUR STORY",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "GLORAC was born from a love of quiet beauty. The kind that does not need to announce itself.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We believe the pieces closest to the body should feel as beautiful as they look. From fluid silk sleepwear to softly feminine dresses and scarves, every GLORAC piece is created around ease, elegance and the simple pleasure of feeling beautifully dressed.</p><p>Our collections are inspired by the quieter moments of life — slow mornings, evenings at home, journeys away, and occasions remembered long after they have passed.</p><p><em>Luxury, to us, is not excess. It is how something feels.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "philosophy": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "OUR PHILOSOPHY",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Quiet Luxury",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are drawn to things that reveal their beauty slowly — natural movement, beautiful fabrics, thoughtful proportions and details that never ask for attention.</p><p>GLORAC is designed for a woman who values how something feels as much as how it looks.</p><p><em>Never overstated. Always considered.</em></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "craftsmanship": {
+      "type": "multicolumn",
+      "blocks": {
+        "fabric": {
+          "type": "column",
+          "settings": {
+            "title": "THE FINEST FABRICS",
+            "text": "<p>Selected for touch, movement and natural beauty.</p>"
+          }
+        },
+        "details": {
+          "type": "column",
+          "settings": {
+            "title": "REFINED DETAILS",
+            "text": "<p>Considered finishing, piping and construction.</p>"
+          }
+        },
+        "beauty": {
+          "type": "column",
+          "settings": {
+            "title": "LASTING BEAUTY",
+            "text": "<p>Pieces designed to remain beyond a single season.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "fabric",
+        "details",
+        "beauty"
+      ],
+      "settings": {
+        "title": "MADE WITH INTENTION",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "closing_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "For the beautiful moments in between.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Pieces designed for the way you live, rest, travel and celebrate.",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "DISCOVER GLORAC",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "customer_care": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "WE'RE HERE TO HELP",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Questions about our collections, sizing or your order? Our Customer Care team would be happy to assist.</p>"
+          }
+        },
+        "buttons": {
+          "type": "button",
+          "settings": {
+            "button_label": "CONTACT US",
+            "button_link": "/pages/contact",
+            "button_style_secondary": true,
+            "button_label_2": "INSTAGRAM",
+            "button_link_2": "https://instagram.com/",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "buttons"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "story",
+    "philosophy",
+    "craftsmanship",
+    "closing_banner",
+    "customer_care"
+  ]
+}
