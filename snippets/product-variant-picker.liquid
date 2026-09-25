@@ -25,6 +25,14 @@
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
         assign picker_type = block.settings.picker_type
+        assign option_name_downcase = option.name | downcase
+        assign option_role = ''
+
+        if option_name_downcase contains 'color' or option_name_downcase contains 'colour' or option_name_downcase contains 'färg'
+          assign option_role = 'color'
+        elsif option_name_downcase contains 'size' or option_name_downcase contains 'storlek'
+          assign option_role = 'size'
+        endif
 
         if swatch_count > 0 and block.settings.swatch_shape != 'none'
           if block.settings.picker_type == 'dropdown'
@@ -35,8 +43,11 @@
         endif
       -%}
       {%- if picker_type == 'swatch' -%}
-        <fieldset class="js product-form__input product-form__input--swatch">
+        <fieldset class="js product-form__input product-form__input--swatch{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
           <legend class="form__label">
+            {%- if option_role == 'size' -%}
+              <span class="product-detail-reference__size-icon" aria-hidden="true">{{ 'icon-ruler.svg' | inline_asset_content }}</span>
+            {%- endif -%}
             {{ option.name }}:
             <span data-selected-value>
               {{- option.selected_value -}}
@@ -50,8 +61,13 @@
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}</legend>
+        <fieldset class="js product-form__input product-form__input--pill{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
+          <legend class="form__label">
+            {%- if option_role == 'size' -%}
+              <span class="product-detail-reference__size-icon" aria-hidden="true">{{ 'icon-ruler.svg' | inline_asset_content }}</span>
+            {%- endif -%}
+            {{ option.name }}
+          </legend>
           {% render 'product-variant-options',
             product: product,
             option: option,
@@ -60,7 +76,7 @@
           %}
         </fieldset>
       {%- else -%}
-        <div class="product-form__input product-form__input--dropdown">
+        <div class="product-form__input product-form__input--dropdown{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
             {{ option.name }}
           </label>

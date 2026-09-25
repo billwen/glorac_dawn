@@ -16,11 +16,14 @@
         "price": {
           "type": "price"
         },
+        "rating": {
+          "type": "rating"
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "square"
           }
         },
         "quantity_selector": {
@@ -47,6 +50,7 @@
         "vendor",
         "title",
         "price",
+        "rating",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",

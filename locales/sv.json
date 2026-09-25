@@ -108,6 +108,10 @@
     "product": {
       "add_to_cart": "Lägg i varukorgen",
       "description": "Beskrivning",
+      "material": "Material",
+      "shipping_and_returns": "Frakt & retur",
+      "shipping_policy": "Fraktinformation",
+      "returns_policy": "Returpolicy",
       "on_sale": "Rea",
       "quantity": {
         "label": "Kvantitet",
