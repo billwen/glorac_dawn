@@ -425,38 +425,55 @@ product-info.product-detail-reference {
   }
 
   .product-detail-reference .product-form__input--pill input[type='radio'] + label {
-    min-width: 5.8rem;
-    min-height: 5.2rem;
+    min-width: 4.8rem;
+    min-height: 4rem;
     margin: 0 0.8rem 0.8rem 0;
-    padding: 1.5rem 1.2rem;
-    border: 0.1rem solid #dfddd1;
+    padding: 0.9rem 1.2rem;
+    border: 0.1rem solid #e0ded3;
     border-radius: 0;
     background: transparent;
     color: var(--product-detail-ink);
     font-size: 1.5rem;
     letter-spacing: 0;
     line-height: 2rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .product-detail-reference .product-form__input--pill input[type='radio']:not(:disabled):not(.disabled) + label:hover,
+  .product-detail-reference .product-form__input--pill input[type='radio']:not(:disabled):not(.disabled):hover + label,
+  .product-detail-reference .product-form__input--pill input[type='radio']:focus-visible + label {
+    border-color: #3b4021;
   }
 
   .product-detail-reference .product-form__input--pill input[type='radio']:checked + label {
-    border-color: var(--product-detail-ink);
+    border-color: #3b4021;
     background: transparent;
     color: var(--product-detail-ink);
   }
 
   .product-detail-reference .product-form__input--swatch .swatch-input__input + .swatch-input__label {
-    --swatch-input--size: 3.2rem;
+    --swatch-input--size: 2.6rem;
     display: inline-flex;
+    position: relative;
     margin: 0 0.8rem 0.8rem 0;
-    padding: 0.4rem;
-    border: 0.1rem solid #dfddd1;
+    padding: 0.3rem;
+    border: 0.1rem solid #e0ded3;
     border-radius: 0;
-    background: #fffef8;
+    background: transparent;
   }
 
   .product-detail-reference .product-form__input--swatch .swatch-input__input:checked + .swatch-input__label {
-    border-color: var(--product-detail-ink);
     outline: 0;
+  }
+
+  .product-detail-reference .product-form__input--swatch .swatch-input__input:checked + .swatch-input__label::after {
+    position: absolute;
+    right: -0.1rem;
+    bottom: -0.7rem;
+    left: -0.1rem;
+    height: 0.15rem;
+    background: #3b4021;
+    content: '';
   }
 
   .product-detail-reference .product-form__input--swatch .swatch {
