@@ -219,17 +219,39 @@ product-info.product-detail-reference {
   }
 
   .product-detail-reference .product__media-wrapper .product__media-list {
+    display: block;
     padding: 0;
+    gap: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .product-detail-reference .product--thumbnail_slider .product__media-list .product__media-item,
+  .product-detail-reference .product--thumbnail_slider .product__media-list .product__media-item:not(.is-active) {
+    display: block;
+    width: 100%;
+    max-width: 100%;
   }
 
   .product-detail-reference .product__media-wrapper .thumbnail-slider {
-    position: absolute;
-    top: 11rem;
-    bottom: 4rem;
+    position: fixed;
+    top: 50vh;
+    bottom: auto;
     left: 4vw;
-    z-index: 2;
+    z-index: 6;
     display: block;
-    width: 6.8rem;
+    width: 7rem;
+    max-height: min(59.2rem, calc(100vh - 12rem));
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease;
+  }
+
+  .product-detail-reference .product__media-wrapper:hover .thumbnail-slider,
+  .product-detail-reference .product__media-wrapper .thumbnail-slider:focus-within {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .product-detail-reference .thumbnail-slider .slider-button {
@@ -239,18 +261,31 @@ product-info.product-detail-reference {
   .product-detail-reference .thumbnail-slider .thumbnail-list.slider--tablet-up {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1.2rem;
     width: 100%;
     max-height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 0;
+    scroll-snap-type: none;
     scrollbar-width: none;
   }
 
   .product-detail-reference .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
-    width: 100%;
-    min-height: 8.6rem;
-    flex: 0 0 8.6rem;
+    width: 6.6rem;
+    max-width: 6.6rem;
+    height: 9.8rem;
+    min-height: 9.8rem;
+    flex: 0 0 9.8rem;
+  }
+
+  .product-detail-reference .thumbnail-list__item::before {
+    content: none;
+  }
+
+  .product-detail-reference .thumbnail-list__item .thumbnail[aria-current] {
+    border-color: #3b4021;
+    box-shadow: none;
   }
 
   .product-detail-reference__progress {
