@@ -505,3 +505,17 @@
 .localization-selector__flag:empty {
   display: none;
 }
+
+.country-selector__list {
+  min-width: 17.5rem;
+}
+
+.country-selector__list .disclosure__link {
+  grid-template-columns: 1rem 2.8rem minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.8rem;
+}
+
+.country-selector__list .localization-selector__flag {
+  margin-right: 0;
+}
