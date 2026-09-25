@@ -9,7 +9,7 @@
   {% render 'header-drawer', show_language_selector: true %}
 {% enddoc %}
 
-<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+<header-drawer data-breakpoint="desktop">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
       class="header__icon header__icon--menu header__icon--summary link focus-inset"
@@ -22,6 +22,18 @@
     </summary>
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
+        <div class="menu-drawer__reference-header">
+          <button type="button" class="menu-drawer__reference-close" aria-label="{{ 'accessibility.close' | t }}">
+            {{- 'icon-close.svg' | inline_asset_content -}}
+          </button>
+        </div>
+        <nav class="menu-drawer__reference-tabs" aria-label="Collections">
+          {%- for link in section.settings.menu.links limit: 2 -%}
+            <a href="{{ link.url }}" class="menu-drawer__reference-tab{% if link.active or forloop.first %} is-active{% endif %}">
+              {{- link.title | escape -}}
+            </a>
+          {%- endfor -%}
+        </nav>
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">

@@ -1,0 +1,351 @@
+/* Two-row navigation and compact mobile header inspired by the product reference. */
+.announcement-bar-section .utility-bar {
+  height: 3.6rem;
+  border: 0;
+  background: rgb(24 28 16);
+  color: #fcfbf0;
+}
+
+.announcement-bar-section .utility-bar__grid,
+.announcement-bar-section .announcement-bar,
+.announcement-bar-section .announcement-bar__announcement,
+.announcement-bar-section .announcement-bar__link {
+  height: 3.6rem;
+  min-height: 3.6rem;
+  color: #fcfbf0;
+}
+
+.announcement-bar-section .announcement-bar__message {
+  min-height: 3.6rem;
+  padding: 0;
+  color: #fcfbf0;
+  font-size: 1.1rem;
+  line-height: 3.6rem;
+  letter-spacing: 0.02em;
+}
+
+.header-wrapper--reference {
+  border-bottom: 0;
+  background: #fcfaee;
+}
+
+.header.header--reference {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  color: #3b4021;
+}
+
+.header--reference .header__heading-link,
+.header--reference .header__heading {
+  grid-area: heading;
+  justify-self: center;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-align: center;
+}
+
+.header--reference .header__heading-link .h2 {
+  color: inherit;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1;
+}
+
+.header--reference .header__icons {
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0;
+  color: inherit;
+}
+
+.header--reference .header__icon,
+.header--reference shopify-account.header__icon {
+  width: 3.6rem;
+  min-width: 3.6rem;
+  height: 3.6rem;
+  margin: 0;
+  color: inherit;
+  --shopify-account-color-text: currentColor;
+}
+
+.header--reference .header__icon .svg-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.header--reference .header__icon .icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.header--reference .header__icons .localization-selector--country {
+  color: inherit;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .header.header--reference {
+    grid-template-areas:
+      'left-icons heading icons'
+      'navigation navigation navigation';
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 7.2rem 4.6rem;
+    column-gap: 0;
+    padding: 0 4% !important;
+  }
+
+  .header--reference .header-reference__left-tools {
+    display: none;
+  }
+
+  .header--reference .header__inline-menu {
+    display: block;
+    grid-area: navigation;
+    width: 100%;
+    height: 4.6rem;
+    margin: 0;
+  }
+
+  .header--reference .header__inline-menu > .list-menu--inline {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  .header--reference .header__inline-menu > .list-menu--inline > li:first-child {
+    position: absolute;
+    top: 0;
+    left: 4%;
+    display: flex;
+    align-items: center;
+    height: 7.2rem;
+  }
+
+  .header--reference .header__inline-menu > .list-menu--inline > li:not(:first-child) {
+    display: flex;
+    flex: 1 1 0;
+    align-items: stretch;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .header--reference .header__inline-menu > .list-menu--inline > li > header-menu,
+  .header--reference .header__inline-menu > .list-menu--inline > li > header-menu > details {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+  }
+
+  .header--reference .header__inline-menu > .list-menu--inline > li > .header__menu-item,
+  .header--reference .header__inline-menu > .list-menu--inline > li > header-menu > details > .header__menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 1.2rem;
+    color: inherit;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .header--reference .header__inline-menu > .list-menu--inline > li:first-child .header__menu-item {
+    padding-left: 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+  }
+
+  .header--reference .header__inline-menu > .list-menu--inline > li > header-menu > details > .header__menu-item .icon-caret {
+    display: none;
+  }
+
+  .header--reference .header__inline-menu .header__menu-item:hover span,
+  .header--reference .header__inline-menu .header__active-menu-item {
+    text-decoration: none;
+    border-bottom: 0.1rem solid currentColor;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .header.header--reference,
+  .header--reference.header--has-account.header--has-menu:not(.header--mobile-left):not(.header--has-app) {
+    display: grid;
+    grid-template-areas: 'left-icons heading icons';
+    grid-template-columns: 1fr auto 1fr;
+    column-gap: 0;
+    width: 100%;
+    height: 5.6rem;
+    min-height: 5.6rem;
+    padding: 0 1.2rem !important;
+  }
+
+  .header--reference .header__inline-menu {
+    display: none !important;
+  }
+
+  .header--reference .header-reference__left-tools {
+    display: flex;
+    grid-area: left-icons;
+    align-items: center;
+    gap: 1.2rem;
+    justify-self: start;
+  }
+
+  .header--reference header-drawer {
+    display: block;
+    margin: 0;
+  }
+
+  .header--reference .header-reference__left-tools > .header__search,
+  .header--reference .header__icons > .header__search {
+    display: inline-flex;
+  }
+
+  .header--reference .header__icons > .header__search {
+    display: none;
+  }
+
+  .header--reference .header__heading-link .h2 {
+    font-size: 2.1rem;
+  }
+
+  .header--reference .header__icon,
+  .header--reference shopify-account.header__icon {
+    width: 2.8rem;
+    min-width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .header--reference .header__icon--menu > span,
+  .header--reference .header__icon--search > span {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .header--reference .header__icons {
+    gap: 0.8rem;
+  }
+
+  .header--reference .header__icons--localization .desktop-localization-wrapper {
+    display: none;
+  }
+
+  .header--reference .menu-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    max-width: none;
+    height: 100vh !important;
+    height: 100dvh !important;
+    padding: 0;
+    border: 0;
+    background: #fcfaee;
+    color: #3b4021;
+    filter: none;
+    z-index: 20;
+  }
+
+  .header--reference .menu-drawer__reference-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 6rem;
+    padding: 0 5%;
+  }
+
+  .header--reference .menu-drawer__reference-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .header--reference .menu-drawer__reference-close svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .header--reference .menu-drawer__reference-tabs {
+    display: flex;
+    gap: 0.4rem;
+    min-height: 4.8rem;
+    padding: 0.4rem 5%;
+    background: rgba(237, 234, 222, 0.6);
+  }
+
+  .header--reference .menu-drawer__reference-tab {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    color: inherit;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .header--reference .menu-drawer__reference-tab.is-active {
+    background: #fcfaee;
+  }
+
+  .header--reference .menu-drawer__navigation-container {
+    height: calc(100% - 10.8rem);
+    background: #fcfaee;
+  }
+
+  .header--reference .menu-drawer__navigation {
+    padding: 2.4rem 5%;
+  }
+
+  .header--reference .menu-drawer__menu-item {
+    padding: 0.8rem 0;
+    background: transparent;
+    color: #3b4021;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  .header--reference .menu-drawer__menu-item:hover,
+  .header--reference .menu-drawer__menu-item:focus-visible {
+    background: transparent;
+    text-decoration: underline;
+  }
+
+  .header--reference .menu-drawer__utility-links {
+    padding: 0 5% 2.4rem;
+  }
+
+  .header--reference .menu-drawer__localization .localization-selector--country {
+    width: 100%;
+    height: 4rem;
+    padding: 0 1.2rem;
+    background: #edebdf;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .menu-drawer__reference-header,
+  .menu-drawer__reference-tabs {
+    display: none;
+  }
+}

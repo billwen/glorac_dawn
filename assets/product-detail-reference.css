@@ -134,17 +134,17 @@ body:has(product-info.product-detail-reference) .section-header.scrolled-past-he
 }
 
 body:has(product-info.product-detail-reference) .header {
-  color: #fff;
+  color: #34381e;
 }
 
 body:has(product-info.product-detail-reference) .header__heading-logo {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 body:has(product-info.product-detail-reference) .header__heading-link .h2 {
-  color: #fff;
-  font-size: 1.6rem;
-  letter-spacing: 0.08em;
+  color: #34381e;
+  font-size: 3rem;
+  letter-spacing: 0.09em;
   white-space: nowrap;
 }
 
@@ -407,8 +407,17 @@ product-info.product-detail-reference {
     color: #fff;
   }
 
+  body:has(product-info.product-detail-reference) .header__heading-logo {
+    filter: brightness(0) invert(1);
+  }
+
+  body:has(product-info.product-detail-reference) .header__heading-link .h2 {
+    color: #fff;
+    font-size: 2.1rem;
+  }
+
   body:has(product-info.product-detail-reference) .header__icons {
-    color: #34381e;
+    color: #fff;
   }
 }
 
