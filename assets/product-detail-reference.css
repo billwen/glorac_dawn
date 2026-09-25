@@ -336,7 +336,7 @@ product-info.product-detail-reference {
   }
 
   .product-detail-reference .product__info-container {
-    font-family: 'Futura PT', Futura, 'Jost Product', sans-serif;
+    font-family: var(--font-body-family);
   }
 
   .product-detail-reference .product__info-container > * + * {

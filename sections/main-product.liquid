@@ -25,15 +25,6 @@
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
   {{ 'product-detail-reference.css' | asset_url | stylesheet_tag }}
-  <style>
-    @font-face {
-      font-family: 'Jost Product';
-      src: url('{{ 'jost-latin-variable.woff2' | asset_url }}') format('woff2');
-      font-style: normal;
-      font-weight: 400 700;
-      font-display: swap;
-    }
-  </style>
 
   {%- style -%}
     .section-{{ section.id }}-padding {
