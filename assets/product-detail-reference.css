@@ -241,7 +241,7 @@ product-info.product-detail-reference {
     z-index: 6;
     display: block;
     width: 7rem;
-    max-height: min(59.2rem, calc(100vh - 12rem));
+    max-height: min(53.8rem, calc(100vh - 12rem));
     opacity: 0;
     pointer-events: none;
     transform: translateY(-50%);
@@ -263,7 +263,7 @@ product-info.product-detail-reference {
     flex-direction: column;
     gap: 1.2rem;
     width: 100%;
-    max-height: 100%;
+    max-height: min(53.8rem, calc(100vh - 12rem));
     overflow-y: auto;
     overflow-x: hidden;
     padding: 0;
