@@ -6,6 +6,114 @@
   display: none;
 }
 
+.product-detail-reference__size-guide-opener {
+  display: block;
+  width: fit-content;
+}
+
+.product-detail-reference__size-guide-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 0 1.8rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--product-detail-ink, #34381e);
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.product-detail-reference__size-guide-trigger svg {
+  display: block;
+  width: 2.1rem;
+  height: 1.2rem;
+  flex: none;
+}
+
+.product-detail-reference__size-guide-trigger:hover span {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.product-detail-reference__size-guide-trigger:focus-visible {
+  outline: 0.2rem solid currentColor;
+  outline-offset: 0.4rem;
+}
+
+.product-detail-reference__size-guide-modal {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.product-detail-reference__size-guide-content {
+  width: min(92%, 102.4rem);
+  height: 90vh;
+  margin-top: 5vh;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #fcfaee;
+  color: #34381e;
+}
+
+.product-detail-reference__size-guide-content .product-popup-modal__toggle {
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: 0.6rem;
+  border: 0;
+  border-radius: 0;
+  background: #fcfaee;
+  color: #34381e;
+}
+
+.product-detail-reference__size-guide-body {
+  max-width: 92rem;
+  margin: 0 auto;
+  padding: 1.2rem 4rem 4rem;
+}
+
+.product-detail-reference__size-guide-body h2 {
+  margin: 0 0 3.2rem;
+  color: #34381e;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.product-detail-reference__size-guide-body .rte {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 749px) {
+  .product-detail-reference__size-guide-content {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    margin: 0;
+    transform: none;
+  }
+
+  .product-detail-reference__size-guide-body {
+    padding: 1.2rem 2rem 3rem;
+  }
+
+  .product-detail-reference__size-guide-body h2 {
+    font-size: 2rem;
+  }
+}
+
 /* The header sits over the first photograph on product pages. */
 body:has(product-info.product-detail-reference) .section-header {
   position: absolute;

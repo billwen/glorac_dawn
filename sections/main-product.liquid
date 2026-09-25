@@ -510,7 +510,8 @@
                   {% render 'product-variant-picker',
                     product: product,
                     block: block,
-                    product_form_id: product_form_id
+                    product_form_id: product_form_id,
+                    show_size_guide: true
                   %}
                 {%- when 'buy_buttons' -%}
                   {%- render 'buy-buttons',
@@ -760,6 +761,38 @@
       </div>
 
       {% render 'product-media-modal', variant_images: variant_images %}
+
+      {%- assign has_size_option = false -%}
+      {%- for option in product.options_with_values -%}
+        {%- assign option_name_downcase = option.name | downcase -%}
+        {%- if option_name_downcase contains 'size' or option_name_downcase contains 'storlek' -%}
+          {%- assign has_size_option = true -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if has_size_option -%}
+        <modal-dialog id="SizeGuide-{{ section.id }}" class="product-popup-modal product-detail-reference__size-guide-modal">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="SizeGuideTitle-{{ section.id }}"
+            class="product-popup-modal__content product-detail-reference__size-guide-content"
+            tabindex="-1"
+          >
+            <button
+              id="ModalClose-SizeGuide-{{ section.id }}"
+              type="button"
+              class="product-popup-modal__toggle"
+              aria-label="{{ 'accessibility.close' | t }}"
+            >
+              {{- 'icon-close.svg' | inline_asset_content -}}
+            </button>
+            <div class="product-detail-reference__size-guide-body">
+              <h2 id="SizeGuideTitle-{{ section.id }}">Vad är min storlek?</h2>
+              <div class="rte">{{ pages['size-guide'].content }}</div>
+            </div>
+          </div>
+        </modal-dialog>
+      {%- endif -%}
 
       {% assign popups = section.blocks | where: 'type', 'popup' %}
       {%- for block in popups -%}

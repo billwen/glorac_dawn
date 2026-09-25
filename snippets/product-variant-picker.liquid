@@ -44,8 +44,8 @@
       -%}
       {%- if picker_type == 'swatch' -%}
         <fieldset class="js product-form__input product-form__input--swatch{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
-          <legend class="form__label">
-            {%- if option_role == 'size' -%}
+          <legend class="form__label{% if show_size_guide and option_role == 'size' %} visually-hidden{% endif %}">
+            {%- if option_role == 'size' and show_size_guide != true -%}
               <span class="product-detail-reference__size-icon" aria-hidden="true">{{ 'icon-ruler.svg' | inline_asset_content }}</span>
             {%- endif -%}
             {{ option.name }}:
@@ -53,6 +53,9 @@
               {{- option.selected_value -}}
             </span>
           </legend>
+          {%- if show_size_guide and option_role == 'size' -%}
+            {%- render 'product-size-guide-trigger' -%}
+          {%- endif -%}
           {% render 'product-variant-options',
             product: product,
             option: option,
@@ -62,12 +65,15 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
-          <legend class="form__label">
-            {%- if option_role == 'size' -%}
+          <legend class="form__label{% if show_size_guide and option_role == 'size' %} visually-hidden{% endif %}">
+            {%- if option_role == 'size' and show_size_guide != true -%}
               <span class="product-detail-reference__size-icon" aria-hidden="true">{{ 'icon-ruler.svg' | inline_asset_content }}</span>
             {%- endif -%}
             {{ option.name }}
           </legend>
+          {%- if show_size_guide and option_role == 'size' -%}
+            {%- render 'product-size-guide-trigger' -%}
+          {%- endif -%}
           {% render 'product-variant-options',
             product: product,
             option: option,
@@ -77,9 +83,12 @@
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+          <label class="form__label{% if show_size_guide and option_role == 'size' %} visually-hidden{% endif %}" for="Option-{{ section.id }}-{{ forloop.index0 }}">
             {{ option.name }}
           </label>
+          {%- if show_size_guide and option_role == 'size' -%}
+            {%- render 'product-size-guide-trigger' -%}
+          {%- endif -%}
           <div class="select">
             {%- if picker_type == 'swatch_dropdown' -%}
               <span
