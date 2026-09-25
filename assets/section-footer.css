@@ -1,4 +1,13 @@
 .footer {
+  --color-background: 24, 28, 16;
+  --gradient-background: rgb(24 28 16);
+  --color-foreground: 255, 254, 248;
+  --color-button: 255, 254, 248;
+  --color-button-text: 24, 28, 16;
+  --color-secondary-button-text: 255, 254, 248;
+  --color-link: 255, 254, 248;
+  background: rgb(24 28 16);
+  color: rgb(255 254 248);
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
