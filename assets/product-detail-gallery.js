@@ -71,6 +71,45 @@ function initializeVerticalGalleryTracking(root = document) {
   });
 }
 
+function initializeProductInfoStickyPosition(root = document) {
+  root.querySelectorAll('product-info.product-detail-reference .product__info-wrapper').forEach((panel) => {
+    if (panel.dataset.stickyPositionInitialized) return;
+    panel.dataset.stickyPositionInitialized = 'true';
+
+    let lastScrollY = window.scrollY;
+    let minTop = 0;
+    let top = -window.scrollY;
+
+    const updateBounds = () => {
+      if (!window.matchMedia('(min-width: 1024px)').matches) {
+        panel.style.removeProperty('--product-detail-sticky-top');
+        top = 0;
+        lastScrollY = window.scrollY;
+        return;
+      }
+
+      minTop = Math.min(0, window.innerHeight - panel.offsetHeight);
+      top = Math.max(minTop, Math.min(0, top));
+      panel.style.setProperty('--product-detail-sticky-top', `${top}px`);
+    };
+
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      const movement = scrollY - lastScrollY;
+      lastScrollY = scrollY;
+      if (!window.matchMedia('(min-width: 1024px)').matches) return;
+
+      top = Math.max(minTop, Math.min(0, top - movement));
+      panel.style.setProperty('--product-detail-sticky-top', `${top}px`);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', updateBounds);
+    new ResizeObserver(updateBounds).observe(panel);
+    updateBounds();
+  });
+}
+
 function positionProductHeader() {
   const announcement = document.querySelector('.announcement-bar-section');
   const update = () => {
@@ -87,15 +126,18 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initializeProductGalleryProgress();
     initializeVerticalGalleryTracking();
+    initializeProductInfoStickyPosition();
     positionProductHeader();
   });
 } else {
   initializeProductGalleryProgress();
   initializeVerticalGalleryTracking();
+  initializeProductInfoStickyPosition();
   positionProductHeader();
 }
 
 document.addEventListener('shopify:section:load', (event) => {
   initializeProductGalleryProgress(event.target);
   initializeVerticalGalleryTracking(event.target);
+  initializeProductInfoStickyPosition(event.target);
 });

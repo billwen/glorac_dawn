@@ -205,8 +205,11 @@ product-info.product-detail-reference {
   }
 
   .product-detail-reference .product .product__info-wrapper {
-    min-height: 100%;
-    padding: 11rem 5vw 7rem;
+    position: sticky;
+    top: var(--product-detail-sticky-top, 0px);
+    align-self: flex-start;
+    min-height: 0;
+    padding: 9.3rem 5vw 4.8rem;
   }
 
   .product-detail-reference .product__info-container {
@@ -307,6 +310,12 @@ product-info.product-detail-reference {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .product-detail-reference .product .product__info-wrapper {
+    padding-top: 21.7rem;
+  }
+}
+
 @media screen {
   product-info.product-detail-reference {
     --product-detail-ink: #34381e;
@@ -327,7 +336,7 @@ product-info.product-detail-reference {
   }
 
   .product-detail-reference .product__info-container {
-    font-family: 'Avenir Next', Avenir, var(--font-body-family);
+    font-family: 'Futura PT', Futura, 'Jost Product', sans-serif;
   }
 
   .product-detail-reference .product__info-container > * + * {
@@ -358,7 +367,7 @@ product-info.product-detail-reference {
     color: var(--product-detail-ink);
     font-family: inherit;
     font-size: clamp(1.8rem, 3vw, 2rem);
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.01em;
     line-height: 1.35;
   }
@@ -460,17 +469,17 @@ product-info.product-detail-reference {
   }
 
   .product-detail-reference .product-form__input--pill input[type='radio'] + label {
-    min-width: 4.8rem;
-    min-height: 4rem;
-    margin: 0 0.8rem 0.8rem 0;
-    padding: 0.9rem 1.2rem;
+    min-width: 3.2rem;
+    min-height: 2.67rem;
+    margin: 0 0.53rem 0.53rem 0;
+    padding: 0.6rem 0.8rem;
     border: 0.1rem solid #e0ded3;
     border-radius: 0;
     background: transparent;
     color: var(--product-detail-ink);
-    font-size: 1.5rem;
+    font-size: 1rem;
     letter-spacing: 0;
-    line-height: 2rem;
+    line-height: 1.3rem;
     transition: border-color 0.3s ease;
   }
 
@@ -529,12 +538,18 @@ product-info.product-detail-reference {
     margin: 0;
     border: 0;
     border-radius: 0;
-    background: var(--product-detail-ink);
+    background: #3b4021;
     color: #fffef8;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+
+  .product-detail-reference .product-form__submit.button:not([disabled]):hover {
+    background: #292e18;
   }
 
   .product-detail-reference .product-form__submit.button::before,
@@ -670,5 +685,41 @@ product-info.product-detail-reference {
     color: var(--product-detail-ink);
     font-size: 1.5rem;
     line-height: 1.6;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .product-detail-reference .product__text.caption-with-letter-spacing {
+    margin-bottom: 1.6rem;
+    padding: 0.6rem 1rem;
+    line-height: 1.4rem;
+  }
+
+  .product-detail-reference .product__title,
+  .product-detail-reference .product__text.caption-with-letter-spacing + .product__title {
+    margin-bottom: 0.8rem;
+  }
+
+  .product-detail-reference .product__title h1 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  .product-detail-reference .price.price--large {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .product-detail-reference .product__info-container > variant-selects {
+    gap: 1.8rem;
+    margin-top: 6.4rem;
+  }
+
+  .product-detail-reference .product__info-container .product-form {
+    margin-top: 4rem;
+  }
+
+  .product-detail-reference .product-form__submit.button {
+    min-height: 4.8rem;
   }
 }

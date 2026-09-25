@@ -25,6 +25,15 @@
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
   {{ 'product-detail-reference.css' | asset_url | stylesheet_tag }}
+  <style>
+    @font-face {
+      font-family: 'Jost Product';
+      src: url('{{ 'jost-latin-variable.woff2' | asset_url }}') format('woff2');
+      font-style: normal;
+      font-weight: 400 700;
+      font-display: swap;
+    }
+  </style>
 
   {%- style -%}
     .section-{{ section.id }}-padding {
@@ -200,9 +209,9 @@
                     {%- endif -%}
                   </p>
                 {%- when 'description' -%}
-                  {%- if product.description != blank -%}
-                    {%- assign description_text = product.description | strip_html -%}
-                    <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  {%- assign description_text = product.description | strip_html -%}
+                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                    {%- if description_text != blank -%}
                       <div class="product__description-full">{{ product.description }}</div>
                       <div class="product__description-preview">{{ description_text | truncate: 250 }}</div>
                       {%- if description_text.size > 250 -%}
@@ -215,8 +224,10 @@
                           <div class="product__description-expanded">{{ product.description }}</div>
                         </details>
                       {%- endif -%}
-                    </div>
-                  {%- endif -%}
+                    {%- else -%}
+                      <p class="product__description-preview">Product details coming soon.</p>
+                    {%- endif -%}
+                  </div>
                 {%- when 'sku' -%}
                   <p
                     class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -714,35 +725,41 @@
             {%- if product_material == blank -%}
               {%- assign product_material = product.metafields.custom.fabric -%}
             {%- endif -%}
-            {%- if product_material != blank or product.description != blank or shop.shipping_policy.body != blank or shop.refund_policy.body != blank -%}
-              <div class="product-detail-reference__accordions">
-                {%- if product_material != blank -%}
-                  <details>
-                    <summary>{{ 'products.product.material' | t }} <span aria-hidden="true"></span></summary>
-                    <div class="product-detail-reference__accordion-content rte">{{ product_material | metafield_tag }}</div>
-                  </details>
-                {%- endif -%}
-                {%- if product.description != blank -%}
-                  <details>
-                    <summary>{{ 'products.product.description' | t }} <span aria-hidden="true"></span></summary>
-                    <div class="product-detail-reference__accordion-content rte">{{ product.description }}</div>
-                  </details>
-                {%- endif -%}
-                {%- if shop.shipping_policy.body != blank or shop.refund_policy.body != blank -%}
-                  <details>
-                    <summary>{{ 'products.product.shipping_and_returns' | t }} <span aria-hidden="true"></span></summary>
-                    <div class="product-detail-reference__accordion-content rte">
-                      {%- if shop.shipping_policy.body != blank -%}
-                        <a href="{{ shop.shipping_policy.url }}">{{ 'products.product.shipping_policy' | t }}</a>
-                      {%- endif -%}
-                      {%- if shop.refund_policy.body != blank -%}
-                        <a href="{{ shop.refund_policy.url }}">{{ 'products.product.returns_policy' | t }}</a>
-                      {%- endif -%}
-                    </div>
-                  </details>
-                {%- endif -%}
-              </div>
-            {%- endif -%}
+            <div class="product-detail-reference__accordions">
+              <details>
+                <summary>{{ 'products.product.material' | t }} <span aria-hidden="true"></span></summary>
+                <div class="product-detail-reference__accordion-content rte">
+                  {%- if product_material != blank -%}
+                    {{ product_material | metafield_tag }}
+                  {%- else -%}
+                    <p>Material details coming soon.</p>
+                  {%- endif -%}
+                </div>
+              </details>
+              <details>
+                <summary>{{ 'products.product.description' | t }} <span aria-hidden="true"></span></summary>
+                <div class="product-detail-reference__accordion-content rte">
+                  {%- if product.description != blank -%}
+                    {{ product.description }}
+                  {%- else -%}
+                    <p>Product details coming soon.</p>
+                  {%- endif -%}
+                </div>
+              </details>
+              {%- if shop.shipping_policy.body != blank or shop.refund_policy.body != blank -%}
+                <details>
+                  <summary>{{ 'products.product.shipping_and_returns' | t }} <span aria-hidden="true"></span></summary>
+                  <div class="product-detail-reference__accordion-content rte">
+                    {%- if shop.shipping_policy.body != blank -%}
+                      <a href="{{ shop.shipping_policy.url }}">{{ 'products.product.shipping_policy' | t }}</a>
+                    {%- endif -%}
+                    {%- if shop.refund_policy.body != blank -%}
+                      <a href="{{ shop.refund_policy.url }}">{{ 'products.product.returns_policy' | t }}</a>
+                    {%- endif -%}
+                  </div>
+                </details>
+              {%- endif -%}
+            </div>
             <a href="{{ product.url }}" class="link product__view-details animate-arrow">
               {{ 'products.product.view_full_details' | t }}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
