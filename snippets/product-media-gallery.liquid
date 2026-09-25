@@ -6,6 +6,7 @@
   - product: {Object} Product liquid object
   - variant_images: {Array} Product images associated with a variant
   - limit: {Number} (optional) When passed, limits the number of media items to render
+  - show_reference_progress: {Boolean} Show the product-page image progress indicator
 
   Usage:
   {% render 'product-media-gallery' %}
@@ -154,6 +155,13 @@
       </button>
     </div>
   </slider-component>
+  {%- if show_reference_progress and media_count > 1 -%}
+    <div class="product-detail-reference__progress" aria-hidden="true">
+      {%- for media in product.media limit: media_count -%}
+        <span{% if forloop.first %} class="is-active"{% endif %}></span>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
   {%- if first_3d_model -%}
     <button
       class="button button--full-width product__xr-button"
