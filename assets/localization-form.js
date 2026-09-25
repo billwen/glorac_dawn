@@ -16,6 +16,13 @@ if (!customElements.get('localization-form')) {
           searchIcon: this.querySelector('.country-filter__search-icon'),
           liveRegion: this.querySelector('#sr-country-search-results'),
         };
+        const countryFlag = this.querySelector('.localization-selector__flag');
+        const countryCode = countryFlag?.dataset.countryCode?.toUpperCase();
+        if (countryFlag && !countryFlag.querySelector('svg') && /^[A-Z]{2}$/.test(countryCode)) {
+          countryFlag.textContent = String.fromCodePoint(
+            ...Array.from(countryCode, (letter) => letter.charCodeAt(0) + 127397)
+          );
+        }
         this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
         this.addEventListener('keydown', this.onContainerKeyDown.bind(this));
         this.addEventListener('focusout', this.closeSelector.bind(this));
