@@ -117,7 +117,7 @@
 /* The header sits over the first photograph on product pages. */
 body:has(product-info.product-detail-reference) .section-header {
   position: absolute;
-  top: var(--product-announcement-height, 39px);
+  top: var(--product-announcement-height, 36px);
   right: 0;
   left: 0;
   margin-bottom: 0;
@@ -403,22 +403,7 @@ product-info.product-detail-reference {
     display: none;
   }
 
-  body:has(product-info.product-detail-reference) .header {
-    color: #fff;
-  }
 
-  body:has(product-info.product-detail-reference) .header__heading-logo {
-    filter: brightness(0) invert(1);
-  }
-
-  body:has(product-info.product-detail-reference) .header__heading-link .h2 {
-    color: #fff;
-    font-size: 2.1rem;
-  }
-
-  body:has(product-info.product-detail-reference) .header__icons {
-    color: #fff;
-  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
@@ -839,4 +824,33 @@ product-info.product-detail-reference {
   .product-detail-reference .product-form__submit.button {
     min-height: 4.8rem;
   }
+}
+
+@media screen and (max-width: 1023px) {
+  body:has(product-info.product-detail-reference) .header {
+    color: #fff;
+  }
+
+  body:has(product-info.product-detail-reference) .header__heading-logo {
+    filter: brightness(0) invert(1);
+  }
+
+  body:has(product-info.product-detail-reference) .header__heading-link .h2 {
+    color: #fff;
+    font-size: 2.1rem;
+  }
+
+  body:has(product-info.product-detail-reference) .header__icons {
+    color: #fff;
+  }
+
+  body:has(product-info.product-detail-reference) .scrolled-past-header .header__icons {
+    color: #34381e;
+  }
+}
+
+/* Keep the hidden variant label from extending the page width. */
+.product-detail-reference legend.visually-hidden {
+  left: 0;
+  top: 0;
 }
