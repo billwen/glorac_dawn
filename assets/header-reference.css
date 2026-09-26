@@ -349,3 +349,31 @@
     display: none;
   }
 }
+
+/* Match the reference header's pointer hover without sticky hover on touch devices. */
+.header-wrapper--reference {
+  transition: background-color 300ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .header-wrapper--reference:hover,
+  body:has(product-info.product-detail-reference) .header-wrapper--reference:hover {
+    background: rgba(252, 250, 238, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  .header-wrapper--reference:hover .header--reference,
+  .header-wrapper--reference:hover .header__icons,
+  .header-wrapper--reference:hover .header__heading-link .h2,
+  body:has(product-info.product-detail-reference) .header-wrapper--reference:hover .header,
+  body:has(product-info.product-detail-reference) .header-wrapper--reference:hover .header__icons,
+  body:has(product-info.product-detail-reference) .header-wrapper--reference:hover .header__heading-link .h2 {
+    color: #3b4021;
+  }
+
+  .header-wrapper--reference:hover .header__heading-logo,
+  body:has(product-info.product-detail-reference) .header-wrapper--reference:hover .header__heading-logo {
+    filter: none;
+  }
+}
