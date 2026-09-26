@@ -81,6 +81,13 @@
   height: 2rem;
 }
 
+/* Dawn cart artwork includes internal spacing and uses a 44px SVG in backup/v1. */
+.header--reference .header__icon--cart .icon {
+  width: 4.4rem;
+  height: 4.4rem;
+  flex-shrink: 0;
+}
+
 .header--reference .header__icons .localization-selector--country {
   color: inherit;
   font-size: 1.2rem;
