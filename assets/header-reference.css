@@ -384,3 +384,14 @@
     filter: none;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .header--reference .header__inline-menu header-menu > details:not(.mega-menu) {
+    position: relative;
+  }
+
+  .header--reference .header__inline-menu header-menu > details > .header__submenu {
+    top: 100%;
+    left: 0;
+  }
+}
