@@ -28,7 +28,7 @@
           </button>
         </div>
         <nav class="menu-drawer__reference-tabs" aria-label="Collections">
-          {%- for link in section.settings.menu.links limit: 2 -%}
+          {%- for link in section.settings.menu.links limit: 1 -%}
             <a href="{{ link.url }}" class="menu-drawer__reference-tab{% if link.active or forloop.first %} is-active{% endif %}">
               {{- link.title | escape -}}
             </a>
@@ -37,7 +37,7 @@
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-              {%- for link in section.settings.menu.links -%}
+              {%- for link in section.settings.menu.links offset: 1 -%}
                 <li>
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
