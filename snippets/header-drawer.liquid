@@ -28,11 +28,12 @@
           </button>
         </div>
         <nav class="menu-drawer__reference-tabs" aria-label="Collections">
-          {%- for link in section.settings.menu.links limit: 1 -%}
-            <a href="{{ link.url }}" class="menu-drawer__reference-tab{% if link.active or forloop.first %} is-active{% endif %}">
-              {{- link.title | escape -}}
+          {%- assign top_menu_link = section.settings.menu.links | first -%}
+          {%- if top_menu_link != blank -%}
+            <a href="{{ top_menu_link.url }}" class="menu-drawer__reference-tab is-active">
+              {{- top_menu_link.title | escape -}}
             </a>
-          {%- endfor -%}
+          {%- endif -%}
         </nav>
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
