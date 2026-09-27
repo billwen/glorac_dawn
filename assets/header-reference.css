@@ -125,16 +125,7 @@
     height: 100%;
   }
 
-  .header--reference .header__inline-menu > .list-menu--inline > li:first-child {
-    position: absolute;
-    top: 0;
-    left: 4%;
-    display: flex;
-    align-items: center;
-    height: 7.2rem;
-  }
-
-  .header--reference .header__inline-menu > .list-menu--inline > li:not(:first-child) {
+  .header--reference .header__inline-menu > .list-menu--inline > li {
     display: flex;
     flex: 1 1 0;
     align-items: stretch;
@@ -165,11 +156,6 @@
     white-space: nowrap;
   }
 
-  .header--reference .header__inline-menu > .list-menu--inline > li:first-child .header__menu-item {
-    padding-left: 0;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-  }
 
   .header--reference .header__inline-menu > .list-menu--inline > li > header-menu > details > .header__menu-item .icon-caret {
     display: none;
@@ -393,22 +379,5 @@
   .header--reference .header__inline-menu header-menu > details > .header__submenu {
     top: 100%;
     left: 0;
-  }
-}
-
-/* The category row appears while the desktop header is being used. */
-@media screen and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
-  .header--reference .header__inline-menu > .list-menu--inline > li:not(:first-child) {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 150ms ease;
-  }
-
-  .header-wrapper--reference:hover .header__inline-menu > .list-menu--inline > li:not(:first-child),
-  .header-wrapper--reference:has(:focus-visible) .header__inline-menu > .list-menu--inline > li:not(:first-child) {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
   }
 }
