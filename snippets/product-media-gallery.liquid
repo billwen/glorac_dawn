@@ -72,6 +72,7 @@
           {%- assign media_position = 1 -%}
           {% render 'product-thumbnail',
             media: featured_media,
+            disable_image_zoom: disable_image_zoom,
             media_count: media_count,
             position: media_position,
             desktop_layout: section.settings.gallery_layout,
@@ -110,6 +111,7 @@
             -%}
             {% render 'product-thumbnail',
               media: media,
+              disable_image_zoom: disable_image_zoom,
               media_count: media_count,
               position: media_position,
               desktop_layout: section.settings.gallery_layout,

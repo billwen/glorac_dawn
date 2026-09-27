@@ -35,8 +35,13 @@
     assign desktop_columns = 2
   endif
 
+  assign image_zoom = section.settings.image_zoom
+  if disable_image_zoom
+    assign image_zoom = 'none'
+  endif
+
   if media.media_type == 'image'
-    assign image_class = 'image-magnify-' | append: section.settings.image_zoom
+    assign image_class = 'image-magnify-' | append: image_zoom
   endif
 -%}
 
@@ -53,7 +58,7 @@
     data-modal="#ProductModal-{{ modal_id }}"
   >
     <span
-      class="product__media-icon motion-reduce quick-add-hidden{% if media.media_type == 'image' %} product__media-icon--{{ section.settings.image_zoom }}{% endif %}"
+      class="product__media-icon motion-reduce quick-add-hidden{% if media.media_type == 'image' %} product__media-icon--{{ image_zoom }}{% endif %}"
       aria-hidden="true"
     >
       {% case media.media_type %}
@@ -83,8 +88,9 @@
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
       }}
     </div>
+    {%- unless disable_image_zoom and media.media_type == 'image' -%}
     <button
-      class="product__media-toggle quick-add-hidden product__media-zoom-{{ section.settings.image_zoom }}"
+      class="product__media-toggle quick-add-hidden product__media-zoom-{{ image_zoom }}"
       type="button"
       aria-haspopup="dialog"
       data-media-id="{{ media.id }}"
@@ -93,6 +99,7 @@
         {{ 'products.product.media.open_media' | t: index: position }}
       </span>
     </button>
+    {%- endunless -%}
   </modal-opener>
 
   {%- if media.media_type != 'image' -%}
