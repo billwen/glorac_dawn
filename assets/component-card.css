@@ -537,7 +537,7 @@
 .card--editorial > .card__content .card__information {
   min-width: 0;
   padding: 1.2rem 0 0;
-  text-align: center;
+  text-align: left;
 }
 
 .card--editorial .card__vendor {
@@ -546,7 +546,7 @@
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.4;
-  text-align: center;
+  text-align: left;
 }
 
 .card--editorial .card__heading,
@@ -563,6 +563,7 @@
 
 .card--editorial .card__heading {
   min-width: 0;
+  text-align: left;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -581,7 +582,7 @@
 
 .card--editorial .card-information__footer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 0.4rem;
 }
 
@@ -592,14 +593,9 @@
   column-gap: 0.8rem;
 }
 
-.card--editorial .card-information__footer--with-swatches > .price {
+.card--editorial .card-information__footer > .price {
   min-width: 0;
   margin: 0;
-  text-align: left;
-}
-
-.card--editorial .card__information:has(.card-information__footer--with-swatches) .card__vendor,
-.card--editorial .card__information:has(.card-information__footer--with-swatches) .card__heading {
   text-align: left;
 }
 
