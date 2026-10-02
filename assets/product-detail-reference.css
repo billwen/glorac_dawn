@@ -960,3 +960,6 @@ product-info.product-detail-reference {
 .product-size-chart__content > :first-child {
   margin-top: 0;
 }
+.product-detail-reference .product-detail-reference__price {
+  padding-top: 2rem;
+}
