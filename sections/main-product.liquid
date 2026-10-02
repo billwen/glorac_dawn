@@ -101,6 +101,11 @@
                         {{ product.title | escape }}
                       </h2>
                     </a>
+                    {%- if product.metafields.custom.glorac_material.value != blank -%}
+                      <div class="product-detail-reference__material-subtitle">
+                        {{ product.metafields.custom.glorac_material | metafield_tag }}
+                      </div>
+                    {%- endif -%}
                   </div>
                 {%- when 'price' -%}
                   <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>

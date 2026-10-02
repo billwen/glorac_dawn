@@ -854,3 +854,22 @@ product-info.product-detail-reference {
   left: 0;
   top: 0;
 }
+
+/* Product material sits directly below the product name. */
+.product-detail-reference .product-detail-reference__material-subtitle {
+  margin-top: 0.6rem;
+  color: var(--product-detail-ink);
+  font-family: inherit;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.product-detail-reference__material-subtitle .metafield-multi_line_text_field,
+.product-detail-reference__material-subtitle .metafield-rich_text_field > :first-child {
+  margin-top: 0;
+}
+
+.product-detail-reference__material-subtitle .metafield-rich_text_field > :last-child {
+  margin-bottom: 0;
+}
