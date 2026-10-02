@@ -72,6 +72,9 @@
             block: block,
             picker_type: picker_type
           %}
+          {%- if option_role == 'size' -%}
+            {% render 'product-model-text', product: product %}
+          {%- endif -%}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
@@ -95,6 +98,9 @@
             block: block,
             picker_type: picker_type
           %}
+          {%- if option_role == 'size' -%}
+            {% render 'product-model-text', product: product %}
+          {%- endif -%}
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
@@ -135,6 +141,9 @@
               {{- 'icon-caret.svg' | inline_asset_content -}}
             </span>
           </div>
+          {%- if option_role == 'size' -%}
+            {% render 'product-model-text', product: product %}
+          {%- endif -%}
         </div>
       {%- endif -%}
     {%- endfor -%}

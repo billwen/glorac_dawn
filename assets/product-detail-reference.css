@@ -963,3 +963,11 @@ product-info.product-detail-reference {
 .product-detail-reference .product-detail-reference__price {
   padding-top: 2rem;
 }
+
+.product-detail-reference .product-detail-reference__model {
+  margin: 1rem 0 0;
+  color: var(--product-detail-ink);
+  font-family: inherit;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}

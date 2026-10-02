@@ -40,11 +40,11 @@
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-detail-gallery.js' | asset_url }}" defer="defer"></script>
-  {%- if product.metafields.custom.glorac_sizechart.value != blank or product.metafields.custom.product_details.value != blank -%}
+  {%- if product.metafields.custom.glorac_sizechart.value != blank or product.metafields.custom.product_details.value != blank or product.metafields.custom.care.value != blank -%}
     <script src="{{ 'marked.umd.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'purify.min.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
-  {%- if product.metafields.custom.product_details.value != blank -%}
+  {%- if product.metafields.custom.product_details.value != blank or product.metafields.custom.care.value != blank -%}
     <script src="{{ 'product-markdown.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
   {%- if product.metafields.custom.glorac_sizechart.value != blank -%}
@@ -738,7 +738,10 @@
                 <details>
                   <summary>{{ 'products.product.care' | t }} <span aria-hidden="true"></span></summary>
                   <div class="product-detail-reference__accordion-content rte">
-                    {{ product.metafields.custom.care | metafield_tag }}
+                    <glorac-product-markdown>
+                      <template data-product-markdown>{{ product.metafields.custom.care.value | escape }}</template>
+                      <div data-product-markdown-content>{{ product.metafields.custom.care.value | escape | newline_to_br }}</div>
+                    </glorac-product-markdown>
                   </div>
                 </details>
               {%- endif -%}
