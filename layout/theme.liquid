@@ -54,16 +54,11 @@
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    {% render 'theme-fonts' %}
+
     {{ content_for_header }}
 
     {% style %}
-      @font-face {
-        font-family: Futura-Book;
-        src: local('Futura-Book'), local('Futura Book'), local('Futura PT Book');
-        font-style: normal;
-        font-weight: 400;
-      }
-
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
         {% if forloop.index == 1 -%}
@@ -110,12 +105,12 @@
       }
 
       :root {
-        --font-body-family: Futura-Book, ui-sans-serif, system-ui, sans-serif;
+        --font-body-family: 'Baskervville', 'Times New Roman', serif;
         --font-body-style: normal;
         --font-body-weight: 400;
         --font-body-weight-bold: 700;
 
-        --font-heading-family: Futura-Book, ui-sans-serif, system-ui, sans-serif;
+        --font-heading-family: 'Baskervville', 'Times New Roman', serif;
         --font-heading-style: normal;
         --font-heading-weight: 400;
 
