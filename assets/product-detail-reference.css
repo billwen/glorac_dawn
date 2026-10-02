@@ -938,6 +938,8 @@ product-info.product-detail-reference {
 .product-size-chart__content td {
   padding: 0.8rem 1.2rem;
   border: 1px solid #e8e5d9;
+  text-align: center !important;
+  vertical-align: middle;
   white-space: nowrap;
 }
 
