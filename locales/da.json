@@ -109,6 +109,8 @@
       "size_chart": "Størrelsesguide",
       "add_to_cart": "Læg i indkøbskurv",
       "description": "Beskrivelse",
+      "product_details": "Produktdetaljer",
+      "care": "Pleje",
       "on_sale": "Udsalg",
       "quantity": {
         "label": "Antal",
