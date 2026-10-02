@@ -288,6 +288,12 @@ product-info.product-detail-reference {
 }
 
 @media screen and (max-width: 1023px) {
+  /* Keep image rounding overflow from capturing vertical page swipes. */
+  .product-detail-reference .product__media-wrapper .product__media-list {
+    overflow-y: hidden;
+    touch-action: pan-x pan-y pinch-zoom;
+  }
+
   .product-detail-reference .product__media-wrapper .thumbnail-slider {
     display: none;
   }
