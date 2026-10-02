@@ -513,7 +513,7 @@ product-info.product-detail-reference {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
-    margin-top: 3.4rem;
+    margin-top: 2rem;
   }
 
   .product-detail-reference .product-form__input {
@@ -814,7 +814,7 @@ product-info.product-detail-reference {
 
   .product-detail-reference .product__info-container > variant-selects {
     gap: 1.8rem;
-    margin-top: 6.4rem;
+    margin-top: 2rem;
   }
 
   .product-detail-reference .product__info-container .product-form {
