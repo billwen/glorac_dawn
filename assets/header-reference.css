@@ -46,6 +46,20 @@
   text-align: center;
 }
 
+.header--reference .header__heading-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.header--reference .header__brand-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
 .header--reference .header__heading-link .h2 {
   color: inherit;
   font-size: 3rem;
@@ -209,6 +223,15 @@
 
   .header--reference .header__heading-link .h2 {
     font-size: 2.1rem;
+  }
+
+  .header--reference .header__heading-link {
+    gap: 0.5rem;
+  }
+
+  .header--reference .header__brand-icon {
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   .header--reference .header__icon,
