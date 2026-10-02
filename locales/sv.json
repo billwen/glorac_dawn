@@ -108,6 +108,7 @@
     "product": {
       "add_to_cart": "Lägg i varukorgen",
       "description": "Beskrivning",
+      "size_chart": "Storleksguide",
       "material": "Material",
       "shipping_and_returns": "Frakt & retur",
       "shipping_policy": "Fraktinformation",

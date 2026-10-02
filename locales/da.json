@@ -106,6 +106,7 @@
   },
   "products": {
     "product": {
+      "size_chart": "Størrelsesguide",
       "add_to_cart": "Læg i indkøbskurv",
       "description": "Beskrivelse",
       "on_sale": "Udsalg",

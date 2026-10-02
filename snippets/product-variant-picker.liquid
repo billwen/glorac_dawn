@@ -4,6 +4,7 @@
   Accepts:
   - product: {Object} product object.
   - block: {Object} passing the block information.
+  - show_size_chart: {Boolean} Enable the product metafield size chart link.
   - product_form_id: {String} Id of the product form to which the variant picker is associated.
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
@@ -42,16 +43,25 @@
           endif
         endif
       -%}
+      {%- assign has_size_chart = false -%}
+      {%- if show_size_chart and option_role == 'size' and product.metafields.custom.glorac_sizechart.value != blank -%}
+        {%- assign has_size_chart = true -%}
+      {%- endif -%}
       {%- if picker_type == 'swatch' -%}
         <fieldset class="js product-form__input product-form__input--swatch{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
-          <legend class="form__label{% if show_size_guide and option_role == 'size' %} visually-hidden{% endif %}">
-            {%- if option_role == 'size' and show_size_guide != true -%}
-              <span class="product-detail-reference__size-icon" aria-hidden="true">{{ 'icon-ruler.svg' | inline_asset_content }}</span>
-            {%- endif -%}
-            {{ option.name }}:
-            <span data-selected-value>
-              {{- option.selected_value -}}
+          <legend class="form__label{% if has_size_chart %} product-size-chart__title-row{% endif %}{% if show_size_guide and option_role == 'size' %} visually-hidden{% endif %}">
+            <span>
+              {%- if option_role == 'size' and show_size_guide != true -%}
+                <span class="product-detail-reference__size-icon" aria-hidden="true">{{ 'icon-ruler.svg' | inline_asset_content }}</span>
+              {%- endif -%}
+              {{ option.name }}:
+              <span data-selected-value>
+                {{- option.selected_value -}}
+              </span>
             </span>
+            {%- if has_size_chart -%}
+              {% render 'product-size-chart-trigger' %}
+            {%- endif -%}
           </legend>
           {%- if show_size_guide and option_role == 'size' -%}
             {%- render 'product-size-guide-trigger' -%}
@@ -65,11 +75,16 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
-          <legend class="form__label{% if show_size_guide and option_role == 'size' %} visually-hidden{% endif %}">
-            {%- if option_role == 'size' and show_size_guide != true -%}
-              <span class="product-detail-reference__size-icon" aria-hidden="true">{{ 'icon-ruler.svg' | inline_asset_content }}</span>
+          <legend class="form__label{% if has_size_chart %} product-size-chart__title-row{% endif %}{% if show_size_guide and option_role == 'size' %} visually-hidden{% endif %}">
+            <span>
+              {%- if option_role == 'size' and show_size_guide != true -%}
+                <span class="product-detail-reference__size-icon" aria-hidden="true">{{ 'icon-ruler.svg' | inline_asset_content }}</span>
+              {%- endif -%}
+              {{ option.name }}
+            </span>
+            {%- if has_size_chart -%}
+              {% render 'product-size-chart-trigger' %}
             {%- endif -%}
-            {{ option.name }}
           </legend>
           {%- if show_size_guide and option_role == 'size' -%}
             {%- render 'product-size-guide-trigger' -%}
@@ -83,9 +98,14 @@
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown{% if option_role != blank %} product-form__input--{{ option_role }}{% endif %}">
-          <label class="form__label{% if show_size_guide and option_role == 'size' %} visually-hidden{% endif %}" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
+          <div{% if has_size_chart %} class="product-size-chart__title-row"{% endif %}>
+            <label class="form__label{% if show_size_guide and option_role == 'size' %} visually-hidden{% endif %}" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+              {{ option.name }}
+            </label>
+            {%- if has_size_chart -%}
+              {% render 'product-size-chart-trigger' %}
+            {%- endif -%}
+          </div>
           {%- if show_size_guide and option_role == 'size' -%}
             {%- render 'product-size-guide-trigger' -%}
           {%- endif -%}

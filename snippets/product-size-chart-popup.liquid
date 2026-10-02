@@ -1,0 +1,17 @@
+{%- if product.metafields.custom.glorac_sizechart.value != blank -%}
+  <modal-dialog id="SizeChart-{{ section.id }}" class="product-popup-modal product-detail-reference__size-guide-modal">
+    <div role="dialog" aria-modal="true" aria-labelledby="SizeChartTitle-{{ section.id }}" class="product-popup-modal__content product-detail-reference__size-guide-content product-size-chart__dialog" tabindex="-1">
+      <button id="ModalClose-SizeChart-{{ section.id }}" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">
+        {{ 'icon-close.svg' | inline_asset_content }}
+      </button>
+      <div class="product-detail-reference__size-guide-body">
+        <h2 id="SizeChartTitle-{{ section.id }}">{{ 'products.product.size_chart' | t }}</h2>
+        <glorac-size-chart>
+          <template data-size-chart-markdown>{{ product.metafields.custom.glorac_sizechart.value | escape }}</template>
+          <div class="rte product-size-chart__content" data-size-chart-content></div>
+          <noscript><div class="product-size-chart__plain">{{ product.metafields.custom.glorac_sizechart.value | escape | newline_to_br }}</div></noscript>
+        </glorac-size-chart>
+      </div>
+    </div>
+  </modal-dialog>
+{%- endif -%}
