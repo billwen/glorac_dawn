@@ -977,6 +977,7 @@ product-info.product-detail-reference {
 }
 .product-detail-reference .product-detail-reference__price {
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .product-detail-reference .product-detail-reference__model {
