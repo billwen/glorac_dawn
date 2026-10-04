@@ -7,7 +7,6 @@
 
 .editorial-footer__shell.page-width {
   max-width: none;
-  container-type: inline-size;
 }
 
 @media screen and (min-width: 1024px) {
@@ -20,9 +19,9 @@
 .editorial-footer__grid {
   display: grid;
   grid-template-columns: 1.35fr 0.75fr 0.95fr 1.35fr 0.7fr;
-  gap: 3cqw;
-  padding-top: 0.6cqw;
-  padding-bottom: 1cqw;
+  gap: 4rem;
+  padding-top: 0.8rem;
+  padding-bottom: 1.3rem;
 }
 
 .editorial-footer__grid > * {
@@ -30,31 +29,31 @@
 }
 
 .editorial-footer__brand {
-  padding-top: 1.6cqw;
+  padding-top: 2.1rem;
 }
 
 .editorial-footer__logo {
   display: inline-block;
   color: #231811;
-  font-size: 3.2cqw;
+  font-size: 4.2rem;
   line-height: 1;
   letter-spacing: 0.12em;
   text-decoration: none;
 }
 
 .editorial-footer__tagline {
-  margin: 0.6cqw 0 0;
-  font-size: 0.65cqw;
+  margin: 0.8rem 0 0;
+  font-size: 0.85rem;
   line-height: 1.4;
   letter-spacing: 0.28em;
   white-space: nowrap;
 }
 
 .editorial-footer__heading {
-  margin: 0 0 1cqw;
+  margin: 0 0 1.3rem;
   color: #43372e;
   font-family: inherit;
-  font-size: 0.8cqw;
+  font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: 0.18em;
@@ -62,11 +61,11 @@
 
 .editorial-footer__links {
   display: grid;
-  gap: 0.35cqw;
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0.95cqw;
+  font-size: 1.3rem;
   line-height: 1.15;
   letter-spacing: 0.02em;
 }
@@ -82,28 +81,28 @@
 }
 
 .editorial-footer__newsletter-text {
-  margin: 0 0 1cqw;
-  font-size: 0.95cqw;
+  margin: 0 0 1.3rem;
+  font-size: 1.3rem;
   line-height: 1.5;
   letter-spacing: 0.01em;
 }
 
 .editorial-footer__email-field {
   display: flex;
-  min-height: 3cqw;
+  min-height: 4rem;
   border: 1px solid #bfb1a5;
 }
 
 .editorial-footer__email-field input {
   width: 100%;
   min-width: 0;
-  padding: 0.8cqw 1.2cqw;
+  padding: 1.1rem 1.6rem;
   border: 0;
   border-radius: 0;
   background: transparent;
   color: #43372e;
   font-family: inherit;
-  font-size: 0.85cqw;
+  font-size: 1.1rem;
 }
 
 .editorial-footer__email-field input::placeholder {
@@ -113,11 +112,11 @@
 
 .editorial-footer__email-field button {
   flex-shrink: 0;
-  padding: 0 1.1cqw;
+  padding: 0 1.4rem;
   border: 0;
   background: transparent;
   color: #8a7b6d;
-  font-size: 1.6cqw;
+  font-size: 2.1rem;
   cursor: pointer;
 }
 
@@ -128,21 +127,21 @@
 
 .editorial-footer__closing {
   align-self: start;
-  min-height: 10cqw;
-  padding: 1.5cqw 0 1.5cqw 2.7cqw;
+  min-height: 13rem;
+  padding: 2rem 0 2rem 3.5rem;
   border-left: 1px solid #d7cbbd;
 }
 
 .editorial-footer__closing p {
-  margin: 0 0 1.3cqw;
-  font-size: 0.75cqw;
+  margin: 0 0 1.7rem;
+  font-size: 1rem;
   line-height: 1.55;
   letter-spacing: 0.28em;
 }
 
 .editorial-footer__closing-rule {
   display: block;
-  width: 1.8cqw;
+  width: 2.4rem;
   height: 1px;
   background: #a99b8e;
 }
@@ -152,13 +151,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  min-height: 4.4cqw;
-  padding: 1cqw 0 1.5cqw;
+  min-height: 5.8rem;
+  padding: 1.3rem 0 2rem;
 }
 
 .editorial-footer__copyright {
   margin: 0;
-  font-size: 0.85cqw;
+  font-size: 1.1rem;
   line-height: 1.4;
   letter-spacing: 0.02em;
 }
@@ -166,7 +165,7 @@
 .editorial-footer__social {
   display: flex;
   align-items: center;
-  gap: 1.4cqw;
+  gap: 1.8rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -176,8 +175,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.4cqw;
-  height: 1.4cqw;
+  width: 1.8rem;
+  height: 1.8rem;
   color: #625b56;
 }
 
@@ -193,7 +192,7 @@ a.editorial-footer__social-icon:hover {
 
 @media screen and (max-width: 989px) and (min-width: 750px) {
   .editorial-footer__grid {
-    gap: 2cqw;
+    gap: 2.6rem;
   }
 }
 
