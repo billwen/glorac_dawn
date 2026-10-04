@@ -25,17 +25,26 @@
     letter-spacing: 0.1em;
   }
 
-  @media screen and (max-width: 749px) {
+  @media screen and (max-width: 989px) {
     .category-heading__row {
       grid-template-columns: minmax(0, 1fr);
       gap: 1.2rem;
-      padding-top: 2.4rem;
-      padding-bottom: 2.4rem;
     }
 
     .category-heading__title,
     .category-heading__tagline {
       grid-column: 1;
+    }
+
+    .category-heading__tagline {
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .category-heading__row {
+      padding-top: 2.4rem;
+      padding-bottom: 2.4rem;
     }
 
     .category-heading__title {
