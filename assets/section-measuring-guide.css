@@ -1,5 +1,5 @@
 .measuring-guide {
-  background: #fbfaf1;
+  background: var(--gradient-background, rgb(var(--color-background)));
   color: #111;
   font: clamp(16px, 1.87vw, 23px)/1.18 "Times New Roman", Times, serif;
 }
