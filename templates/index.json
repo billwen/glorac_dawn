@@ -40,6 +40,37 @@
         "show_text_below": false
       }
     },
+    "category_heading": {
+      "type": "category-heading",
+      "settings": {
+        "heading": "-- SHOP BY CATEGORY --",
+        "tagline": "EXCEPTIONAL PIECES FOR A MORE BEAUTIFUL YOU",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "category_collections": {
+      "type": "category-collections",
+      "blocks": {
+        "sleep": {
+          "type": "collection",
+          "settings": { "collection": "sleep", "name": "Sleep" }
+        },
+        "lounge": {
+          "type": "collection",
+          "settings": { "collection": "lounge", "name": "Lounge" }
+        },
+        "dresses": {
+          "type": "collection",
+          "settings": { "collection": "dresses", "name": "Dresses" }
+        },
+        "scarves": {
+          "type": "collection",
+          "settings": { "collection": "scarves", "name": "Scarves" }
+        }
+      },
+      "block_order": ["sleep", "lounge", "dresses", "scarves"],
+      "settings": { "color_scheme": "scheme-1" }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -71,6 +102,8 @@
   },
   "order": [
     "image_banner",
+    "category_heading",
+    "category_collections",
     "featured_collection"
   ]
 }

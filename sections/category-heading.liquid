@@ -1,0 +1,88 @@
+{%- style -%}
+  .category-heading__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 2rem;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+  }
+
+  .category-heading__title {
+    grid-column: 2;
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+  }
+
+  .category-heading__tagline {
+    grid-column: 3;
+    margin: 0;
+    text-align: right;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+  }
+
+  @media screen and (max-width: 749px) {
+    .category-heading__row {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.2rem;
+      padding-top: 2.4rem;
+      padding-bottom: 2.4rem;
+    }
+
+    .category-heading__title,
+    .category-heading__tagline {
+      grid-column: 1;
+    }
+
+    .category-heading__title {
+      font-size: 1.8rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="category-heading__row page-width">
+    <h2 class="category-heading__title">{{ section.settings.heading | escape }}</h2>
+    <p class="category-heading__tagline">{{ section.settings.tagline | escape }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Category heading",
+  "tag": "section",
+  "class": "section",
+  "enabled_on": {
+    "templates": ["index"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "-- SHOP BY CATEGORY --"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "EXCEPTIONAL PIECES FOR A MORE BEAUTIFUL YOU"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category heading"
+    }
+  ]
+}
+{% endschema %}

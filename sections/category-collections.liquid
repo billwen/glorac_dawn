@@ -1,0 +1,195 @@
+{%- style -%}
+  .category-collections__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 3.6rem;
+    list-style: none;
+  }
+
+  .category-collections__card {
+    display: grid;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    background: rgba(var(--color-foreground), 0.06);
+  }
+
+  .category-collections__image,
+  .category-collections__placeholder {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .category-collections__card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.65));
+    pointer-events: none;
+  }
+
+  .category-collections__content {
+    position: relative;
+    padding: 2rem;
+    z-index: 1;
+    text-align: left;
+  }
+
+  .category-collections__name {
+    margin: 0 0 1.2rem;
+    color: #fff;
+    font-size: 2.4rem;
+  }
+
+  .category-collections__description {
+    margin: 0 0 1.6rem;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .category-collections__description > :first-child {
+    margin-top: 0;
+  }
+
+  .category-collections__description > :last-child {
+    margin-bottom: 0;
+  }
+
+  .category-collections__description a {
+    color: inherit;
+  }
+
+  .category-collections__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.4rem;
+    padding: 1rem 1.4rem;
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+
+  .category-collections__button:hover {
+    color: #000;
+    background: #fff;
+  }
+
+  @media screen and (max-width: 989px) {
+    .category-collections__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 549px) {
+    .category-collections__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <ul class="category-collections__grid page-width" role="list">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign category_collection = block.settings.collection
+        assign category_name = block.settings.name | default: category_collection.title
+        assign category_image = block.settings.image | default: category_collection.featured_image
+        assign category_url = category_collection.url
+        if category_url == blank
+          assign category_handle = category_name | handleize
+          assign category_url = routes.collections_url | append: '/' | append: category_handle
+        endif
+      -%}
+      <li class="category-collections__card" {{ block.shopify_attributes }}>
+        {%- if category_image != blank -%}
+          {{
+            category_image
+            | image_url: width: 1000
+            | image_tag:
+              loading: 'lazy',
+              widths: '300, 450, 600, 800, 1000',
+              sizes: '(min-width: 990px) calc((100vw - 16rem) / 4), (min-width: 550px) calc((100vw - 7rem) / 2), calc(100vw - 3rem)',
+              class: 'category-collections__image'
+          }}
+        {%- else -%}
+          {%- assign placeholder_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+          {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_index -%}
+          {{ placeholder_image | placeholder_svg_tag: 'category-collections__placeholder' }}
+        {%- endif -%}
+        <div class="category-collections__content">
+          <h3 class="category-collections__name">{{ category_name | escape }}</h3>
+          {%- if category_collection.description != blank -%}
+            <div class="category-collections__description rte">
+              {{ category_collection.description }}
+            </div>
+          {%- endif -%}
+          <a class="category-collections__button" href="{{ category_url | escape }}">
+            SHOP {{ category_name | upcase | escape }} -&gt;
+          </a>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Category collections",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "enabled_on": {
+    "templates": ["index"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Display name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image override"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category collections"
+    }
+  ]
+}
+{% endschema %}
