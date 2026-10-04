@@ -190,13 +190,7 @@ a.editorial-footer__social-icon:hover {
   color: #231811;
 }
 
-@media screen and (max-width: 989px) and (min-width: 750px) {
-  .editorial-footer__grid {
-    gap: 2.6rem;
-  }
-}
-
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 989px) {
   .editorial-footer__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.4rem;
