@@ -1,0 +1,246 @@
+.about-editorial {
+  background: #f9f5ed;
+  color: #43372e;
+  font-family: 'Bodoni Moda', 'Times New Roman', serif;
+  letter-spacing: 0;
+}
+
+.about-editorial__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-editorial__placeholder {
+  background: #ede4d6;
+  fill: #8f8173;
+}
+
+.about-editorial__hero {
+  aspect-ratio: 192 / 73;
+  overflow: hidden;
+}
+
+.about-editorial__story {
+  max-width: 132rem;
+  margin: 0 auto;
+  padding: clamp(3.2rem, 3vw, 5.6rem) clamp(2.4rem, 7vw, 12rem);
+}
+
+.about-editorial__story-heading {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 2rem;
+}
+
+.about-editorial__eyebrow {
+  margin: 0 0 1rem;
+  font-size: clamp(1rem, 0.85vw, 1.4rem);
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+}
+
+.about-editorial__heading {
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: clamp(2.6rem, 3.1vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.about-editorial__heading em {
+  font-weight: 400;
+}
+
+.about-editorial__body {
+  font-family: 'Times New Roman', serif;
+  font-size: clamp(1.6rem, 1.35vw, 2rem);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.about-editorial__body p {
+  margin: 0 0 1.2rem;
+}
+
+.about-editorial__body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-editorial__quote {
+  margin: 1.8rem 0 0;
+  font-size: clamp(2rem, 2.2vw, 3.2rem);
+  font-style: italic;
+  line-height: 1.35;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.about-editorial__philosophy {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.about-editorial__philosophy-media {
+  min-height: 100%;
+  position: relative;
+}
+
+.about-editorial__philosophy-media .about-editorial__image {
+  position: absolute;
+  inset: 0;
+}
+
+.about-editorial__philosophy-content {
+  padding: clamp(3rem, 3.4vw, 6rem) clamp(2.4rem, 4vw, 7rem);
+  align-self: center;
+}
+
+.about-editorial__philosophy-content .about-editorial__body {
+  margin-top: 1.8rem;
+}
+
+.about-editorial__philosophy-content .about-editorial__quote {
+  font-size: clamp(1.8rem, 1.65vw, 2.6rem);
+  text-align: left;
+}
+
+.about-editorial__craft {
+  padding: clamp(2.8rem, 2.5vw, 4.4rem) clamp(1.6rem, 2.5vw, 4.8rem);
+  text-align: center;
+}
+
+.about-editorial__craft-heading {
+  margin: 0 0 2.4rem;
+  color: inherit;
+  font-family: inherit;
+  font-size: clamp(1.6rem, 1.65vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+}
+
+.about-editorial__details {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.2rem, 2vw, 3.2rem);
+  max-width: 160rem;
+  margin: 0 auto;
+}
+
+.about-editorial__detail {
+  min-width: 0;
+  margin: 0;
+}
+
+.about-editorial__detail-media {
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+}
+
+.about-editorial__detail figcaption {
+  padding-top: 1rem;
+  font-family: 'Times New Roman', serif;
+  font-size: clamp(1rem, 0.95vw, 1.4rem);
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+
+.about-editorial__craft-text {
+  max-width: 108rem;
+  margin: 2.4rem auto 1.2rem;
+}
+
+.about-editorial__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  min-height: 4.4rem;
+  color: inherit;
+  font-family: 'Times New Roman', serif;
+  font-size: clamp(1.2rem, 1vw, 1.5rem);
+  line-height: 1.4;
+  letter-spacing: 0.09em;
+  text-decoration: none;
+}
+
+.about-editorial__link span:first-child {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  text-decoration-thickness: 1px;
+}
+
+.about-editorial__link:hover span:first-child {
+  text-decoration-thickness: 2px;
+}
+
+.about-editorial__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.about-editorial__closing {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: clamp(30rem, 31.25vw, 60rem);
+  overflow: hidden;
+  background: #43372e;
+  color: #fffaf1;
+}
+
+.about-editorial__closing > .about-editorial__image {
+  position: absolute;
+  inset: 0;
+}
+
+.about-editorial__closing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 14, 10, 0.08), rgba(20, 14, 10, 0.6));
+  pointer-events: none;
+}
+
+.about-editorial__closing-content {
+  position: relative;
+  z-index: 1;
+  padding: 6rem 2.4rem 2.8rem;
+  text-align: center;
+}
+
+.about-editorial__closing .about-editorial__heading {
+  font-size: clamp(2.8rem, 2.8vw, 4.4rem);
+}
+
+.about-editorial__closing .about-editorial__body {
+  margin: 1rem 0 0;
+}
+
+@media screen and (max-width: 749px) {
+  .about-editorial__hero {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-editorial__philosophy {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-editorial__philosophy-media {
+    min-height: 0;
+    aspect-ratio: 55 / 32;
+  }
+
+  .about-editorial__details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2.4rem;
+  }
+
+  .about-editorial__closing {
+    min-height: 36rem;
+  }
+}

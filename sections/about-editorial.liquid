@@ -1,0 +1,297 @@
+{{ 'section-about-editorial.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign hero_image = section.settings.hero_image
+  assign philosophy_image = section.settings.philosophy_image | default: collections['sleep'].image | default: collections['sleep'].featured_image | default: hero_image
+  assign closing_image = section.settings.closing_image | default: collections['signature'].image | default: collections['signature'].featured_image | default: hero_image
+-%}
+
+<div class="about-editorial">
+  <div class="about-editorial__hero">
+    {%- if hero_image != blank -%}
+      {{ hero_image | image_url: width: 3840 | image_tag: widths: '600, 900, 1200, 1600, 1920, 2400, 3840', sizes: '100vw', loading: 'eager', fetchpriority: 'high', class: 'about-editorial__image' }}
+    {%- else -%}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'about-editorial__image about-editorial__placeholder' }}
+    {%- endif -%}
+  </div>
+
+  <div class="about-editorial__story">
+    <div class="about-editorial__story-heading">
+      <p class="about-editorial__eyebrow">{{ section.settings.story_label | escape }}</p>
+      <h1 class="about-editorial__heading">{{ section.settings.story_heading | escape }}<br><em>{{ section.settings.story_subheading | escape }}</em></h1>
+    </div>
+    <div class="about-editorial__body rte">{{ section.settings.story_text }}</div>
+    {%- if section.settings.story_quote != blank -%}
+      <p class="about-editorial__quote">{{ section.settings.story_quote | escape }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="about-editorial__philosophy">
+    <div class="about-editorial__philosophy-media">
+      {%- if philosophy_image != blank -%}
+        {{ philosophy_image | image_url: width: 2000 | image_tag: widths: '400, 600, 900, 1100, 1500, 2000', sizes: '(min-width: 750px) 60vw, 100vw', loading: 'lazy', class: 'about-editorial__image' }}
+      {%- else -%}
+        {{ 'lifestyle-2' | placeholder_svg_tag: 'about-editorial__image about-editorial__placeholder' }}
+      {%- endif -%}
+    </div>
+    <div class="about-editorial__philosophy-content">
+      <p class="about-editorial__eyebrow">{{ section.settings.philosophy_label | escape }}</p>
+      <h2 class="about-editorial__heading">{{ section.settings.philosophy_heading | escape }}</h2>
+      <div class="about-editorial__body rte">{{ section.settings.philosophy_text }}</div>
+      {%- if section.settings.philosophy_quote != blank -%}
+        <p class="about-editorial__quote">{{ section.settings.philosophy_quote | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="about-editorial__craft">
+    <h2 class="about-editorial__craft-heading">{{ section.settings.craft_heading | escape }}</h2>
+    <div class="about-editorial__details">
+      {%- for block in section.blocks -%}
+        {%- assign detail_image = block.settings.image | default: block.settings.collection.image | default: block.settings.collection.featured_image -%}
+        <figure class="about-editorial__detail" {{ block.shopify_attributes }}>
+          <div class="about-editorial__detail-media">
+            {%- if detail_image != blank -%}
+              {{ detail_image | image_url: width: 1200 | image_tag: widths: '300, 450, 600, 900, 1200', sizes: '(min-width: 750px) 25vw, 50vw', loading: 'lazy', class: 'about-editorial__image' }}
+            {%- else -%}
+              {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'about-editorial__image about-editorial__placeholder' }}
+            {%- endif -%}
+          </div>
+          <figcaption>{{ block.settings.title | escape }}</figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+    <div class="about-editorial__body about-editorial__craft-text rte">{{ section.settings.craft_text }}</div>
+    {%- if section.settings.craft_button != blank -%}
+      <a class="about-editorial__link" href="{{ section.settings.craft_link | default: routes.all_products_collection_url | escape }}">
+        <span>{{ section.settings.craft_button | escape }}</span><span aria-hidden="true">&longrightarrow;</span>
+      </a>
+    {%- endif -%}
+  </div>
+
+  <div class="about-editorial__closing">
+    {%- if closing_image != blank -%}
+      {{ closing_image | image_url: width: 3840 | image_tag: widths: '600, 900, 1200, 1600, 1920, 2400, 3840', sizes: '100vw', loading: 'lazy', class: 'about-editorial__image' }}
+    {%- endif -%}
+    <div class="about-editorial__closing-content">
+      <h2 class="about-editorial__heading">{{ section.settings.closing_heading | escape }}</h2>
+      <p class="about-editorial__body">{{ section.settings.closing_text | escape }}</p>
+      {%- if section.settings.closing_button != blank -%}
+        <a class="about-editorial__link" href="{{ section.settings.closing_link | default: routes.all_products_collection_url | escape }}">
+          <span>{{ section.settings.closing_button | escape }}</span><span aria-hidden="true">&longrightarrow;</span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About editorial",
+  "tag": "section",
+  "class": "section",
+  "enabled_on": {
+    "templates": [
+      "page"
+    ]
+  },
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image",
+      "info": "Recommended: 1920 × 730 px. Displays without text."
+    },
+    {
+      "type": "header",
+      "content": "Our story"
+    },
+    {
+      "type": "text",
+      "id": "story_label",
+      "label": "Label",
+      "default": "OUR STORY"
+    },
+    {
+      "type": "text",
+      "id": "story_heading",
+      "label": "Heading",
+      "default": "GLORAC was born from a love of quiet beauty."
+    },
+    {
+      "type": "text",
+      "id": "story_subheading",
+      "label": "Italic heading",
+      "default": "The kind that does not need to announce itself."
+    },
+    {
+      "type": "richtext",
+      "id": "story_text",
+      "label": "Story",
+      "default": "<p>We believe the pieces closest to the body should feel as beautiful as they look. From fluid silk sleepwear to softly feminine dresses and scarves, every GLORAC piece is created around ease, elegance and the simple pleasure of feeling beautifully dressed. Our collections are inspired by the quieter moments of life — slow mornings, evenings at home, journeys away, and occasions remembered long after they have passed.</p>"
+    },
+    {
+      "type": "text",
+      "id": "story_quote",
+      "label": "Quote",
+      "default": "Luxury, to us, is not excess. It is how something feels."
+    },
+    {
+      "type": "header",
+      "content": "Our philosophy"
+    },
+    {
+      "type": "image_picker",
+      "id": "philosophy_image",
+      "label": "Philosophy image",
+      "info": "Recommended: 1100 × 650 px. Falls back to the Sleep collection image."
+    },
+    {
+      "type": "text",
+      "id": "philosophy_label",
+      "label": "Label",
+      "default": "OUR PHILOSOPHY"
+    },
+    {
+      "type": "text",
+      "id": "philosophy_heading",
+      "label": "Heading",
+      "default": "Quiet Luxury"
+    },
+    {
+      "type": "richtext",
+      "id": "philosophy_text",
+      "label": "Text",
+      "default": "<p>We are drawn to things that reveal their beauty slowly — natural movement, beautiful fabrics, thoughtful proportions and details that never ask for attention. GLORAC is designed for a woman who values how something feels as much as how it looks. Effortless at home. Elegant beyond it.</p>"
+    },
+    {
+      "type": "text",
+      "id": "philosophy_quote",
+      "label": "Quote",
+      "default": "Never overstated. Always considered."
+    },
+    {
+      "type": "header",
+      "content": "Made with intention"
+    },
+    {
+      "type": "text",
+      "id": "craft_heading",
+      "label": "Heading",
+      "default": "MADE WITH INTENTION"
+    },
+    {
+      "type": "richtext",
+      "id": "craft_text",
+      "label": "Text",
+      "default": "<p>From the drape of silk to the finish of a seam, every detail matters. We choose fabrics for their touch, movement and lasting beauty, then refine every silhouette so that it feels natural against the body.</p>"
+    },
+    {
+      "type": "text",
+      "id": "craft_button",
+      "label": "Link label",
+      "default": "DISCOVER OUR SILK"
+    },
+    {
+      "type": "url",
+      "id": "craft_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Closing banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "closing_image",
+      "label": "Closing image",
+      "info": "Recommended: 1920 × 600 px. Falls back to the Signature collection image, then the hero image."
+    },
+    {
+      "type": "text",
+      "id": "closing_heading",
+      "label": "Heading",
+      "default": "For the beautiful moments in between."
+    },
+    {
+      "type": "text",
+      "id": "closing_text",
+      "label": "Text",
+      "default": "Pieces designed for the way you live, rest, travel and celebrate."
+    },
+    {
+      "type": "text",
+      "id": "closing_button",
+      "label": "Link label",
+      "default": "DISCOVER GLORAC"
+    },
+    {
+      "type": "url",
+      "id": "closing_link",
+      "label": "Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "detail",
+      "name": "Intention image",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Recommended: 600 × 360 px. Use a close-up of fabric, finishing or silhouette."
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Fallback collection"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Caption",
+          "default": "CONSIDERED DESIGN"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About editorial",
+      "blocks": [
+        {
+          "type": "detail",
+          "settings": {
+            "title": "THE FINEST FABRICS"
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "title": "REFINED DETAILS"
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "title": "CONSIDERED DESIGN"
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "title": "LASTING BEAUTY"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
