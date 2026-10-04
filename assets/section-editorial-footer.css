@@ -9,6 +9,13 @@
   container-type: inline-size;
 }
 
+@media screen and (min-width: 1024px) {
+  .editorial-footer__shell.page-width {
+    width: 100%;
+    padding-inline: 4%;
+  }
+}
+
 .editorial-footer__grid {
   display: grid;
   grid-template-columns: 1.35fr 0.75fr 0.95fr 1.35fr 0.7fr;
