@@ -127,9 +127,34 @@
     }
   }
 
-  @media screen and (max-width: 549px) {
+  @media screen and (max-width: 749px) {
     .category-collections__grid {
-      grid-template-columns: minmax(0, 1fr);
+      gap: 1.2rem;
+    }
+
+    .category-collections__content {
+      padding: 1.2rem;
+    }
+
+    .category-collections__name {
+      font-size: clamp(1.6rem, 4.6vw, 2.4rem);
+    }
+
+    .category-collections__description {
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    .category-collections__button {
+      gap: 0.6rem;
+      min-height: 3.2rem;
+      padding: 0.7rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .category-collections__button svg {
+      width: 1.2rem;
+      height: 1.2rem;
     }
   }
 {%- endstyle -%}
@@ -155,7 +180,7 @@
             | image_tag:
               loading: 'lazy',
               widths: '300, 450, 600, 800, 1000',
-              sizes: '(min-width: 990px) calc((100vw - 16rem) / 4), (min-width: 550px) calc((100vw - 7rem) / 2), calc(100vw - 3rem)',
+              sizes: '(min-width: 990px) calc((100vw - 16rem) / 4), (min-width: 750px) calc((100vw - 7rem) / 2), calc((100vw - 4.2rem) / 2)',
               class: 'category-collections__image'
           }}
         {%- else -%}
