@@ -1,0 +1,12 @@
+.measuring-guide {
+  margin: 0;
+  background: #faf9f0;
+}
+
+.measuring-guide__artwork {
+  display: block;
+  width: 100%;
+  max-width: 1228px;
+  height: auto;
+  margin: 0 auto;
+}

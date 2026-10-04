@@ -1,0 +1,85 @@
+{{ 'section-measuring-guide.css' | asset_url | stylesheet_tag }}
+
+<div class="measuring-guide">
+  <img
+    class="measuring-guide__artwork"
+    src="{{ 'glorac-measuring-guide.png' | asset_url }}"
+    width="1982"
+    height="3305"
+    alt=""
+    loading="eager"
+    fetchpriority="high"
+  >
+  <div class="visually-hidden">
+    <h1>GLORAC Measuring Guide</h1>
+    <p>A step-by-step guide to finding your perfect size.</p>
+
+    <h2>1. Measure your body</h2>
+    <dl>
+      <dt>Bust</dt>
+      <dd>Measure loosely around the fullest part of your bust.</dd>
+      <dt>Waist</dt>
+      <dd>Measure around the narrowest part of your waist.</dd>
+      <dt>Hips</dt>
+      <dd>Measure around the fullest part of your hips.</dd>
+    </dl>
+
+    <h2>2. Measure the garment</h2>
+    <p>Lay the garment flat and smooth before measuring.</p>
+
+    <h3>Robe</h3>
+    <ol>
+      <li>Sleeve length: Shoulder seam to cuff.</li>
+      <li>Front length: High point shoulder to hem.</li>
+    </ol>
+
+    <h3>Slip dress</h3>
+    <ol>
+      <li>Bust: Across the fullest part.</li>
+      <li>Hip: Across the widest part.</li>
+      <li>Front length: Underarm straight down to hem.</li>
+    </ol>
+
+    <h3>Skirt</h3>
+    <ol>
+      <li>Waist: Across the waistband.</li>
+      <li>Hip: Across the widest part.</li>
+      <li>Length: Top edge to hem.</li>
+    </ol>
+
+    <h3>Cami &amp; shorts set</h3>
+    <ol>
+      <li>Chest: 2 cm below the underarm.</li>
+      <li>Short waist: Across the waistband.</li>
+      <li>Short hip: 16 cm below the waistband.</li>
+      <li>Outside short length: Waistband top to hem.</li>
+    </ol>
+
+    <h3>Pajama set</h3>
+    <ol>
+      <li>Chest: 2 cm below the underarm.</li>
+      <li>Sleeve length: Shoulder point to cuff.</li>
+      <li>Trouser waist: Across the waistband.</li>
+      <li>Trouser hip: 16 cm below the waistband.</li>
+      <li>Outside trouser length: Measure from the top edge of the waistband to the hem along the outside leg.</li>
+    </ol>
+    <p>GLORAC — A love letter to your skin.</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Measuring guide",
+  "tag": "section",
+  "class": "section",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "Measuring guide"
+    }
+  ]
+}
+{% endschema %}

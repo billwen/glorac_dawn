@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "measuring_guide": {
+      "type": "measuring-guide",
+      "settings": {}
+    }
+  },
+  "order": ["measuring_guide"]
+}
