@@ -53,23 +53,42 @@
       "blocks": {
         "sleep": {
           "type": "collection",
-          "settings": { "collection": "sleep", "name": "Sleep" }
+          "settings": {
+            "collection": "sleep",
+            "name": "Sleep"
+          }
         },
         "lounge": {
           "type": "collection",
-          "settings": { "collection": "lounge", "name": "Lounge" }
+          "settings": {
+            "collection": "lounge",
+            "name": "Lounge"
+          }
         },
         "dresses": {
           "type": "collection",
-          "settings": { "collection": "dresses", "name": "Dresses" }
+          "settings": {
+            "collection": "dresses",
+            "name": "Dresses"
+          }
         },
         "scarves": {
           "type": "collection",
-          "settings": { "collection": "scarves", "name": "Scarves" }
+          "settings": {
+            "collection": "scarves",
+            "name": "Scarves"
+          }
         }
       },
-      "block_order": ["sleep", "lounge", "dresses", "scarves"],
-      "settings": { "color_scheme": "scheme-1" }
+      "block_order": [
+        "sleep",
+        "lounge",
+        "dresses",
+        "scarves"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
     },
     "signature_banner": {
       "type": "signature-banner",
@@ -82,32 +101,34 @@
         "color_scheme": "scheme-1"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "collection_duo": {
+      "type": "collection-duo",
+      "blocks": {
+        "glow": {
+          "type": "collection",
+          "settings": {
+            "collection": "glow",
+            "name": "Glow",
+            "heading": "Wear your glow",
+            "text": "Luminous silk and glamorous design to catch your natural light and beauty."
+          }
+        },
+        "bloom": {
+          "type": "collection",
+          "settings": {
+            "collection": "bloom",
+            "name": "Bloom",
+            "heading": "Softness in full expression",
+            "text": "Romantic silhouettes and delicate details inspired by femininity in bloom."
+          }
+        }
+      },
+      "block_order": [
+        "glow",
+        "bloom"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "color_scheme": "scheme-1"
       }
     }
   },
@@ -116,6 +137,6 @@
     "category_heading",
     "category_collections",
     "signature_banner",
-    "featured_collection"
+    "collection_duo"
   ]
 }
