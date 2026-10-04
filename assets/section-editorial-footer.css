@@ -93,6 +93,17 @@
   border: 1px solid #bfb1a5;
 }
 
+.editorial-footer__email-field:focus-within {
+  outline: var(--focused-base-outline);
+  outline-offset: var(--focused-base-outline-offset);
+  box-shadow: var(--focused-base-box-shadow);
+}
+
+.editorial-footer__email-field input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .editorial-footer__email-field input {
   width: 100%;
   min-width: 0;
