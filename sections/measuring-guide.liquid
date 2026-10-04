@@ -1,69 +1,70 @@
 {{ 'section-measuring-guide.css' | asset_url | stylesheet_tag }}
 
 <div class="measuring-guide">
-  <img
-    class="measuring-guide__artwork"
-    src="{{ 'glorac-measuring-guide.png' | asset_url }}"
-    width="1982"
-    height="3305"
-    alt=""
-    loading="eager"
-    fetchpriority="high"
-  >
-  <div class="visually-hidden">
-    <h1>GLORAC Measuring Guide</h1>
-    <p>A step-by-step guide to finding your perfect size.</p>
-
-    <h2>1. Measure your body</h2>
-    <dl>
-      <dt>Bust</dt>
-      <dd>Measure loosely around the fullest part of your bust.</dd>
-      <dt>Waist</dt>
-      <dd>Measure around the narrowest part of your waist.</dd>
-      <dt>Hips</dt>
-      <dd>Measure around the fullest part of your hips.</dd>
-    </dl>
-
-    <h2>2. Measure the garment</h2>
-    <p>Lay the garment flat and smooth before measuring.</p>
-
-    <h3>Robe</h3>
-    <ol>
-      <li>Sleeve length: Shoulder seam to cuff.</li>
-      <li>Front length: High point shoulder to hem.</li>
-    </ol>
-
-    <h3>Slip dress</h3>
-    <ol>
-      <li>Bust: Across the fullest part.</li>
-      <li>Hip: Across the widest part.</li>
-      <li>Front length: Underarm straight down to hem.</li>
-    </ol>
-
-    <h3>Skirt</h3>
-    <ol>
-      <li>Waist: Across the waistband.</li>
-      <li>Hip: Across the widest part.</li>
-      <li>Length: Top edge to hem.</li>
-    </ol>
-
-    <h3>Cami &amp; shorts set</h3>
-    <ol>
-      <li>Chest: 2 cm below the underarm.</li>
-      <li>Short waist: Across the waistband.</li>
-      <li>Short hip: 16 cm below the waistband.</li>
-      <li>Outside short length: Waistband top to hem.</li>
-    </ol>
-
-    <h3>Pajama set</h3>
-    <ol>
-      <li>Chest: 2 cm below the underarm.</li>
-      <li>Sleeve length: Shoulder point to cuff.</li>
-      <li>Trouser waist: Across the waistband.</li>
-      <li>Trouser hip: 16 cm below the waistband.</li>
-      <li>Outside trouser length: Measure from the top edge of the waistband to the hem along the outside leg.</li>
-    </ol>
-    <p>GLORAC — A love letter to your skin.</p>
+  <div class="measuring-guide__page">
+    <header class="measuring-guide__header">
+      <div class="measuring-guide__logo"><img src="{{ 'measuring-guide-logo.png' | asset_url }}" width="231" height="218" alt="GLORAC emblem" loading="eager"></div>
+      <p class="measuring-guide__brand">~ GLORAC ~</p>
+      <h1>Measuring Guide</h1>
+      <p class="measuring-guide__intro">A step-by-step guide to finding your perfect size.</p>
+    </header>
+    <section aria-labelledby="BodyMeasurements-{{ section.id }}">
+      <h2 class="measuring-guide__divider" id="BodyMeasurements-{{ section.id }}"><span>1. Measure your body</span></h2>
+      <div class="measuring-guide__body-grid">
+        <article class="measuring-guide__body-card">
+          <img src="{{ 'measuring-guide-bust.png' | asset_url }}" width="606" height="587" alt="White measuring line around the bust." loading="eager">
+          <div class="measuring-guide__body-copy"><h3>Bust</h3><p>Measure loosely around the<br>fullest part of your bust.</p></div>
+        </article>
+        <article class="measuring-guide__body-card">
+          <img src="{{ 'measuring-guide-waist.png' | asset_url }}" width="604" height="587" alt="White measuring line around the waist." loading="eager">
+          <div class="measuring-guide__body-copy"><h3>Waist</h3><p>Measure around the narrowest<br>part of your waist.</p></div>
+        </article>
+        <article class="measuring-guide__body-card">
+          <img src="{{ 'measuring-guide-hips.png' | asset_url }}" width="618" height="587" alt="White measuring line around the hips." loading="eager">
+          <div class="measuring-guide__body-copy"><h3>Hips</h3><p>Measure around the fullest<br>part of your hips.</p></div>
+        </article>
+      </div>
+    </section>
+    <section class="measuring-guide__garments" aria-labelledby="GarmentMeasurements-{{ section.id }}">
+      <h2 class="measuring-guide__divider" id="GarmentMeasurements-{{ section.id }}"><span>2. Measure the garment</span></h2>
+      <p class="measuring-guide__instruction">Lay the garment flat and smooth before measuring.</p>
+      <div class="measuring-guide__garment-grid">
+        <article class="measuring-guide__garment-card">
+          <h3>Robe</h3>
+          <div class="measuring-guide__diagram"><img src="{{ 'measuring-guide-robe.png' | asset_url }}" width="615" height="652" alt="Robe with arrows showing sleeve and front length." loading="lazy"></div>
+          <ol class="measuring-guide__steps"><li><span>Sleeve Length</span><p>Shoulder seam to cuff.</p></li><li><span>Front Length</span><p>High point shoulder to hem.</p></li></ol>
+        </article>
+        <article class="measuring-guide__garment-card">
+          <h3>Slip Dress</h3>
+          <div class="measuring-guide__diagram"><img src="{{ 'measuring-guide-slip-dress.png' | asset_url }}" width="604" height="636" alt="Slip dress with arrows showing bust, hip, and front length." loading="lazy"></div>
+          <ol class="measuring-guide__steps"><li><span>Bust</span><p>Across the fullest part.</p></li><li><span>Hip</span><p>Across the widest part.</p></li><li><span>Front Length</span><p>Underarm straight down to hem.</p></li></ol>
+        </article>
+        <article class="measuring-guide__garment-card">
+          <h3>Skirt</h3>
+          <div class="measuring-guide__diagram"><img src="{{ 'measuring-guide-skirt.png' | asset_url }}" width="625" height="636" alt="Skirt with arrows showing waist, hip, and length." loading="lazy"></div>
+          <ol class="measuring-guide__steps"><li><span>Waist</span><p>Across the waistband.</p></li><li><span>Hip</span><p>Across the widest part.</p></li><li><span>Length</span><p>Top edge to hem.</p></li></ol>
+        </article>
+      </div>
+      <div class="measuring-guide__set-grid">
+        <article class="measuring-guide__set-card">
+          <h3>Cami &amp; Shorts Set</h3>
+          <div class="measuring-guide__set-content">
+            <div class="measuring-guide__set-diagram"><img src="{{ 'measuring-guide-cami-shorts.png' | asset_url }}" width="387" height="590" alt="Camisole and shorts with numbered measurement arrows." loading="lazy"></div>
+            <ol class="measuring-guide__steps"><li><span>Chest</span><p>2 cm below the underarm.</p></li><li><span>Short Waist</span><p>Across the waistband.</p></li><li><span>Short Hip</span><p>16 cm below the waistband.</p></li><li><span>Outside Short Length</span><p>Waistband top to hem.</p></li></ol>
+          </div>
+        </article>
+        <article class="measuring-guide__set-card">
+          <h3>Pajama Set</h3>
+          <div class="measuring-guide__set-content">
+            <div class="measuring-guide__set-diagram"><img src="{{ 'measuring-guide-pajama.png' | asset_url }}" width="420" height="590" alt="Pajama shirt and trousers with numbered measurement arrows." loading="lazy"></div>
+            <ol class="measuring-guide__steps"><li><span>Chest</span><p>2 cm below the underarm.</p></li><li><span>Sleeve Length</span><p>Shoulder point to cuff.</p></li><li><span>Trouser Waist</span><p>Across the waistband.</p></li><li><span>Trouser Hip</span><p>16 cm below the waistband.</p></li><li><span>Outside Trouser Length</span><p>Measure from the top edge of the waistband to the hem along the outside leg.</p></li></ol>
+          </div>
+        </article>
+      </div>
+    </section>
+    <footer class="measuring-guide__footer">
+      <div><p class="measuring-guide__signature">GLORAC</p><p>A love letter to your skin</p></div>
+    </footer>
   </div>
 </div>
 
@@ -73,7 +74,9 @@
   "tag": "section",
   "class": "section",
   "enabled_on": {
-    "templates": ["page"]
+    "templates": [
+      "page"
+    ]
   },
   "settings": [],
   "presets": [

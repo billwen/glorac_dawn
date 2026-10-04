@@ -1,12 +1,54 @@
 .measuring-guide {
-  margin: 0;
-  background: #faf9f0;
+  background: #fbfaf1;
+  color: #111;
+  font: clamp(16px, 1.87vw, 23px)/1.18 "Times New Roman", Times, serif;
 }
-
-.measuring-guide__artwork {
-  display: block;
-  width: 100%;
-  max-width: 1228px;
-  height: auto;
-  margin: 0 auto;
+.measuring-guide__page { max-width: 1228px; margin: 0 auto; padding: 10px 32px 8px; }
+.measuring-guide :is(h1, h2, h3, p) { margin: 0; color: inherit; font-family: inherit; font-weight: 400; line-height: inherit; letter-spacing: normal; }
+.measuring-guide img { display: block; width: 100%; height: auto; }
+.measuring-guide__header { text-align: center; }
+.measuring-guide__logo { width: 143px; margin: 0 auto; }
+.measuring-guide .measuring-guide__brand { margin: 2px 0 12px; font: 800 28px/1.2 Arial, sans-serif; }
+.measuring-guide h1 { font-size: 2.43em; text-transform: uppercase; }
+.measuring-guide .measuring-guide__intro { font-size: 1.17em; letter-spacing: .025em; }
+.measuring-guide .measuring-guide__divider { display: flex; align-items: center; gap: 24px; margin: 10px 5px 5px; font-size: 1.57em; letter-spacing: .035em; text-align: center; text-transform: uppercase; }
+.measuring-guide__divider::before, .measuring-guide__divider::after, .measuring-guide__footer::before, .measuring-guide__footer::after { content: ""; flex: 1; height: 1px; background: #65655f; }
+.measuring-guide__body-grid, .measuring-guide__garment-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; }
+.measuring-guide__body-grid { padding: 0 5px; }
+.measuring-guide__body-card { overflow: hidden; border-radius: 0 0 9px 9px; background: #f7f5eb; text-align: center; }
+.measuring-guide__body-card > img { aspect-ratio: 375 / 364; object-fit: cover; }
+.measuring-guide__body-copy { padding: 14px 8px 17px; }
+.measuring-guide h3 { font-size: 1.26em; text-align: center; text-transform: uppercase; }
+.measuring-guide__body-copy p { margin-top: 8px; }
+.measuring-guide__garments { margin-top: 30px; }
+.measuring-guide .measuring-guide__instruction { margin: 4px 0 12px; text-align: center; }
+.measuring-guide__garment-card, .measuring-guide__set-card { overflow: hidden; border-radius: 11px; background: #f2efe5; }
+.measuring-guide__garment-card > h3 { padding: 12px 8px 9px; }
+.measuring-guide__diagram { background: #f8f5ec; }
+.measuring-guide__diagram img { aspect-ratio: 381 / 404; object-fit: contain; }
+.measuring-guide__steps { margin: 0; padding: 8px 20px 14px 68px; font-size: .91em; }
+.measuring-guide__steps li { padding-left: 4px; margin-bottom: 6px; }
+.measuring-guide__steps li:last-child { margin-bottom: 0; }
+.measuring-guide__steps p { font-size: .95em; }
+.measuring-guide__set-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-top: 10px; }
+.measuring-guide__set-card > h3 { padding: 8px; }
+.measuring-guide__set-content { display: grid; grid-template-columns: 48% 52%; align-items: center; padding: 2px 8px 8px; background: #f7f5eb; min-height: 373px; }
+.measuring-guide__set-diagram img { max-height: 365px; object-fit: contain; }
+.measuring-guide__set-content .measuring-guide__steps { padding: 8px 8px 8px 37px; font-size: .87em; }
+.measuring-guide__set-content li { margin-bottom: 16px; }
+.measuring-guide__footer { display: flex; align-items: center; gap: 36px; margin: 8px 5px 0; text-align: center; }
+.measuring-guide .measuring-guide__signature { font-size: 1.26em; font-weight: 600; letter-spacing: .2em; }
+.measuring-guide__footer div > p:last-child { margin-top: 2px; font-size: .91em; letter-spacing: .15em; color: #68676f; }
+@media screen and (max-width: 749px) {
+  .measuring-guide__page { padding: 16px; }
+  .measuring-guide__logo { width: 105px; }
+  .measuring-guide .measuring-guide__brand { font-size: 22px; }
+  .measuring-guide h1 { font-size: 2em; }
+  .measuring-guide .measuring-guide__divider { gap: 10px; margin: 18px 0 10px; font-size: 1.2em; }
+  .measuring-guide__body-grid, .measuring-guide__garment-grid, .measuring-guide__set-grid { grid-template-columns: 1fr; gap: 16px; }
+  .measuring-guide__body-grid { padding: 0; }
+  .measuring-guide__steps { padding: 16px 24px 20px 48px; font-size: 1.1em; }
+  .measuring-guide__set-content { min-height: 0; padding: 8px; }
+  .measuring-guide__set-content .measuring-guide__steps { padding-left: 25px; font-size: .9em; }
+  .measuring-guide__footer { gap: 12px; margin-top: 16px; }
 }
