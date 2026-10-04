@@ -38,7 +38,7 @@
   }
 
   .category-collections__content {
-    position: relative;
+    position: static;
     padding: 2.4rem;
     z-index: 1;
     text-align: left;
@@ -75,6 +75,8 @@
   }
 
   .category-collections__description a {
+    position: relative;
+    z-index: 2;
     color: inherit;
   }
 
@@ -83,6 +85,7 @@
   }
 
   .category-collections__button {
+    position: static;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -98,6 +101,18 @@
     line-height: 1.2;
     letter-spacing: 0.08em;
     text-decoration: none;
+  }
+
+  .category-collections__button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .category-collections__button:focus-visible::after {
+    outline: 2px solid #fffaf1;
+    outline-offset: -4px;
   }
 
   .category-collections__button:hover {

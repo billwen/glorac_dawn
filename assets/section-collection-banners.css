@@ -32,7 +32,7 @@
 }
 
 .signature-banner__content {
-  position: relative;
+  position: static;
   z-index: 1;
   width: 42%;
   padding: clamp(2.8rem, 4vw, 6.4rem);
@@ -78,6 +78,7 @@
 }
 
 .signature-banner__button {
+  position: static;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -91,6 +92,18 @@
   line-height: 1.2;
   letter-spacing: 0.12em;
   text-decoration: none;
+}
+
+.signature-banner__button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.signature-banner__button:focus-visible::after {
+  outline: 2px solid #43372e;
+  outline-offset: -4px;
 }
 
 .signature-banner__button:hover {

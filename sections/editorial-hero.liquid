@@ -1,0 +1,49 @@
+{{ 'section-editorial-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="editorial-hero">
+  {%- if section.settings.image != blank -%}
+    {{
+      section.settings.image
+      | image_url: width: 3840
+      | image_tag:
+        widths: '600, 900, 1200, 1600, 2022, 2400, 3840',
+        sizes: '100vw',
+        loading: 'eager',
+        fetchpriority: 'high',
+        class: 'editorial-hero__image'
+    }}
+  {%- endif -%}
+  <div class="editorial-hero__content">
+    <p class="editorial-hero__season">{{ section.settings.season | escape }}</p>
+    <h1 class="editorial-hero__heading">{{ section.settings.heading | escape | newline_to_br }}</h1>
+    <p class="editorial-hero__tagline">{{ section.settings.tagline | escape }}</p>
+    {%- if section.settings.button_label != blank -%}
+      <a class="editorial-hero__button" href="{{ section.settings.button_link | default: routes.all_products_collection_url | escape }}">
+        <span>{{ section.settings.button_label | escape }}</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    {%- endif -%}
+  </div>
+  {%- if section.settings.quote != blank -%}
+    <p class="editorial-hero__quote">{{ section.settings.quote | escape | newline_to_br }}</p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Editorial hero",
+  "tag": "section",
+  "class": "section",
+  "enabled_on": { "templates": ["index"] },
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "season", "label": "Season", "default": "AUTUMN / WINTER 2026" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Soft layers.\nFluid silk.\nQuiet elegance." },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "FOR A MORE BEAUTIFUL EVERYDAY" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "DISCOVER THE EDIT" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "textarea", "id": "quote", "label": "Quote", "default": "“Comfort\nis a form of\nluxury.”" }
+  ],
+  "presets": [{ "name": "Editorial hero" }]
+}
+{% endschema %}
