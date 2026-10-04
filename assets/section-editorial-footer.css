@@ -4,7 +4,8 @@
   font-family: 'Times New Roman', serif;
 }
 
-.editorial-footer__shell {
+.editorial-footer__shell.page-width {
+  max-width: none;
   container-type: inline-size;
 }
 
