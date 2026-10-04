@@ -3,7 +3,8 @@
     "about": {
       "type": "about-editorial",
       "settings": {
-        "hero_image": "shopify://shop_images/GLORAC-About-Banner-4096px-No-Text.png",
+        "hero_image": "shopify://shop_images/Brand_Story.png",
+        "philosophy_image": "shopify://shop_images/Brand_Philosophy.png",
         "craft_link": "shopify://collections/sleep",
         "closing_link": "shopify://collections/shop-all"
       },

@@ -86,8 +86,11 @@
 }
 
 .about-editorial__philosophy-media {
-  min-height: 100%;
   position: relative;
+  width: 100%;
+  aspect-ratio: 55 / 28;
+  align-self: center;
+  overflow: hidden;
 }
 
 .about-editorial__philosophy-media .about-editorial__image {
@@ -222,17 +225,8 @@
 }
 
 @media screen and (max-width: 749px) {
-  .about-editorial__hero {
-    aspect-ratio: 4 / 3;
-  }
-
   .about-editorial__philosophy {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .about-editorial__philosophy-media {
-    min-height: 0;
-    aspect-ratio: 55 / 32;
   }
 
   .about-editorial__details {
