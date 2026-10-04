@@ -32,7 +32,7 @@
           <p class="collection-duo__description">{{ block.settings.text | escape | newline_to_br }}</p>
           <a class="collection-duo__button" href="{{ banner_url | escape }}">
             <span>DISCOVER {{ banner_name | upcase | escape }}</span>
-            <span aria-hidden="true">&rarr;</span>
+            {% render 'icon-landing-arrow' %}
           </a>
         </div>
       </div>

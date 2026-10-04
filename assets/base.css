@@ -3642,3 +3642,8 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+.landing-button-arrow {
+  display: block;
+  flex-shrink: 0;
+}

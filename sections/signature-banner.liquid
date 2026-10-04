@@ -32,7 +32,7 @@
         <p class="signature-banner__text">{{ section.settings.text | escape }}</p>
         <a class="signature-banner__button" href="{{ signature_url | escape }}">
           <span>EXPLORE SIGNATURE</span>
-          <span aria-hidden="true">&rarr;</span>
+          {% render 'icon-landing-arrow' %}
         </a>
       </div>
     </div>

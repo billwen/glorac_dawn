@@ -20,7 +20,7 @@
     {%- if section.settings.button_label != blank -%}
       <a class="editorial-hero__button" href="{{ section.settings.button_link | default: routes.all_products_collection_url | escape }}">
         <span>{{ section.settings.button_label | escape }}</span>
-        <span aria-hidden="true">&rarr;</span>
+        {% render 'icon-landing-arrow' %}
       </a>
     {%- endif -%}
   </div>

@@ -172,7 +172,7 @@
           {%- endif -%}
           <a class="category-collections__button" href="{{ category_url | escape }}">
             <span>SHOP {{ category_name | upcase | escape }}</span>
-            <span aria-hidden="true">&rarr;</span>
+            {% render 'icon-landing-arrow' %}
           </a>
         </div>
       </li>
