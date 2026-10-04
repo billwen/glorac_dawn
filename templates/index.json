@@ -81,8 +81,7 @@
           "settings": {
             "collection": "glow",
             "name": "Glow",
-            "heading": "Wear your glow",
-            "text": "Luminous silk and glamorous design to catch your natural light and beauty."
+            "text": "Rituals for\na brighter you."
           }
         },
         "bloom": {
@@ -90,8 +89,7 @@
           "settings": {
             "collection": "bloom",
             "name": "Bloom",
-            "heading": "Softness in full expression",
-            "text": "Romantic silhouettes and delicate details inspired by femininity in bloom."
+            "text": "Softness in\nfull expression."
           }
         }
       },
