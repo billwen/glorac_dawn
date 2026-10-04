@@ -6,6 +6,8 @@
   assign about_names = 'Our Story|Sustainability|Size Guide|Care|Journal|Contact' | split: '|'
   assign about_handles = 'about|sustainability|size-guide|care-guide|journal|contact' | split: '|'
   assign newsletter_id = 'FooterNewsletter-' | append: section.id
+  assign social_platforms = 'instagram|pinterest|facebook|youtube' | split: '|'
+  assign social_names = 'Instagram|Pinterest|Facebook|YouTube' | split: '|'
 -%}
 
 <footer class="editorial-footer">
@@ -109,6 +111,30 @@
         <p>A SOFTER<br>BRIGHTER,<br>MORE BEAUTIFUL<br>TOMORROW</p>
         <span class="editorial-footer__closing-rule" aria-hidden="true"></span>
       </div>
+    </div>
+    <div class="editorial-footer__bottom">
+      <p class="editorial-footer__copyright">&copy; {{ 'now' | date: '%Y' }} GLORAC. All rights reserved.</p>
+      <ul class="editorial-footer__social" role="list">
+        {%- for platform in social_platforms -%}
+          {%- liquid
+            assign social_setting = 'social_' | append: platform | append: '_link'
+            assign social_url = settings[social_setting]
+            assign social_name = social_names[forloop.index0]
+            assign social_icon = 'icon-' | append: platform | append: '.svg'
+          -%}
+          <li>
+            {%- if social_url != blank -%}
+              <a class="editorial-footer__social-icon" href="{{ social_url | escape }}" aria-label="{{ social_name }}">
+                {{- social_icon | inline_asset_content -}}
+              </a>
+            {%- else -%}
+              <span class="editorial-footer__social-icon" role="img" aria-label="{{ social_name }}">
+                {{- social_icon | inline_asset_content -}}
+              </span>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
     </div>
   </div>
 </footer>
