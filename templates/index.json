@@ -71,6 +71,17 @@
       "block_order": ["sleep", "lounge", "dresses", "scarves"],
       "settings": { "color_scheme": "scheme-1" }
     },
+    "signature_banner": {
+      "type": "signature-banner",
+      "settings": {
+        "collection": "signature",
+        "label": "SIGNATURE",
+        "heading": "The Essence",
+        "heading_second_line": "of GLORAC",
+        "text": "Timeless pieces for a more beautiful everyday.",
+        "color_scheme": "scheme-1"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -104,6 +115,7 @@
     "image_banner",
     "category_heading",
     "category_collections",
+    "signature_banner",
     "featured_collection"
   ]
 }
