@@ -1,6 +1,39 @@
 {{ 'section-about-editorial.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
+  assign story_label = section.settings.story_label
+  assign story_heading = section.settings.story_heading
+  assign story_subheading = section.settings.story_subheading
+  assign story_text = section.settings.story_text
+  assign story_quote = section.settings.story_quote
+  assign philosophy_label = section.settings.philosophy_label
+  assign philosophy_heading = section.settings.philosophy_heading
+  assign philosophy_text = section.settings.philosophy_text
+  assign philosophy_quote = section.settings.philosophy_quote
+  assign craft_heading = section.settings.craft_heading
+  assign craft_text = section.settings.craft_text
+  assign craft_button = section.settings.craft_button
+  assign closing_heading = section.settings.closing_heading
+  assign closing_text = section.settings.closing_text
+  assign closing_button = section.settings.closing_button
+  if request.locale.iso_code == 'sv'
+    assign story_label = 'about_editorial.story_label' | t
+    assign story_heading = 'about_editorial.story_heading' | t
+    assign story_subheading = 'about_editorial.story_subheading' | t
+    assign story_text = 'about_editorial.story_text_html' | t
+    assign story_quote = 'about_editorial.story_quote' | t
+    assign philosophy_label = 'about_editorial.philosophy_label' | t
+    assign philosophy_heading = 'about_editorial.philosophy_heading' | t
+    assign philosophy_text = 'about_editorial.philosophy_text_html' | t
+    assign philosophy_quote = 'about_editorial.philosophy_quote' | t
+    assign craft_heading = 'about_editorial.craft_heading' | t
+    assign craft_text = 'about_editorial.craft_text_html' | t
+    assign craft_button = 'about_editorial.craft_button' | t
+    assign closing_heading = 'about_editorial.closing_heading' | t
+    assign closing_text = 'about_editorial.closing_text' | t
+    assign closing_button = 'about_editorial.closing_button' | t
+  endif
+
   assign hero_image = section.settings.hero_image
   assign philosophy_image = section.settings.philosophy_image | default: collections['sleep'].image | default: collections['sleep'].featured_image | default: hero_image
   assign closing_image = section.settings.closing_image | default: collections['signature'].image | default: collections['signature'].featured_image | default: hero_image
@@ -17,12 +50,12 @@
 
   <div class="about-editorial__story">
     <div class="about-editorial__story-heading">
-      <p class="about-editorial__eyebrow">{{ section.settings.story_label | escape }}</p>
-      <h1 class="about-editorial__heading">{{ section.settings.story_heading | escape }}<br><em>{{ section.settings.story_subheading | escape }}</em></h1>
+      <p class="about-editorial__eyebrow">{{ story_label | escape }}</p>
+      <h1 class="about-editorial__heading">{{ story_heading | escape }}<br><em>{{ story_subheading | escape }}</em></h1>
     </div>
-    <div class="about-editorial__body rte">{{ section.settings.story_text }}</div>
-    {%- if section.settings.story_quote != blank -%}
-      <p class="about-editorial__quote">{{ section.settings.story_quote | escape }}</p>
+    <div class="about-editorial__body rte">{{ story_text }}</div>
+    {%- if story_quote != blank -%}
+      <p class="about-editorial__quote">{{ story_quote | escape }}</p>
     {%- endif -%}
   </div>
 
@@ -35,17 +68,17 @@
       {%- endif -%}
     </div>
     <div class="about-editorial__philosophy-content">
-      <p class="about-editorial__eyebrow">{{ section.settings.philosophy_label | escape }}</p>
-      <h2 class="about-editorial__heading">{{ section.settings.philosophy_heading | escape }}</h2>
-      <div class="about-editorial__body rte">{{ section.settings.philosophy_text }}</div>
-      {%- if section.settings.philosophy_quote != blank -%}
-        <p class="about-editorial__quote">{{ section.settings.philosophy_quote | escape }}</p>
+      <p class="about-editorial__eyebrow">{{ philosophy_label | escape }}</p>
+      <h2 class="about-editorial__heading">{{ philosophy_heading | escape }}</h2>
+      <div class="about-editorial__body rte">{{ philosophy_text }}</div>
+      {%- if philosophy_quote != blank -%}
+        <p class="about-editorial__quote">{{ philosophy_quote | escape }}</p>
       {%- endif -%}
     </div>
   </div>
 
   <div class="about-editorial__craft">
-    <h2 class="about-editorial__craft-heading">{{ section.settings.craft_heading | escape }}</h2>
+    <h2 class="about-editorial__craft-heading">{{ craft_heading | escape }}</h2>
     <div class="about-editorial__details">
       {%- for block in section.blocks -%}
         {%- assign detail_image = block.settings.image | default: block.settings.collection.image | default: block.settings.collection.featured_image -%}
@@ -57,14 +90,29 @@
               {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'about-editorial__image about-editorial__placeholder' }}
             {%- endif -%}
           </div>
-          <figcaption>{{ block.settings.title | escape }}</figcaption>
+          {%- liquid
+            assign detail_title = block.settings.title
+            if request.locale.iso_code == 'sv'
+              case block.settings.title
+                when 'THE FINEST FABRICS'
+                  assign detail_title = 'about_editorial.captions.finest_fabrics' | t
+                when 'REFINED DETAILS'
+                  assign detail_title = 'about_editorial.captions.refined_details' | t
+                when 'CONSIDERED DESIGN'
+                  assign detail_title = 'about_editorial.captions.considered_design' | t
+                when 'LASTING BEAUTY'
+                  assign detail_title = 'about_editorial.captions.lasting_beauty' | t
+              endcase
+            endif
+          -%}
+          <figcaption>{{ detail_title | escape }}</figcaption>
         </figure>
       {%- endfor -%}
     </div>
-    <div class="about-editorial__body about-editorial__craft-text rte">{{ section.settings.craft_text }}</div>
-    {%- if section.settings.craft_button != blank -%}
+    <div class="about-editorial__body about-editorial__craft-text rte">{{ craft_text }}</div>
+    {%- if craft_button != blank -%}
       <a class="about-editorial__link" href="{{ section.settings.craft_link | default: routes.all_products_collection_url | escape }}">
-        <span>{{ section.settings.craft_button | escape }}</span><span aria-hidden="true">&longrightarrow;</span>
+        <span>{{ craft_button | escape }}</span><span aria-hidden="true">&longrightarrow;</span>
       </a>
     {%- endif -%}
   </div>
@@ -74,11 +122,11 @@
       {{ closing_image | image_url: width: 3840 | image_tag: widths: '600, 900, 1200, 1600, 1920, 2400, 3840', sizes: '100vw', loading: 'lazy', class: 'about-editorial__image' }}
     {%- endif -%}
     <div class="about-editorial__closing-content">
-      <h2 class="about-editorial__heading">{{ section.settings.closing_heading | escape }}</h2>
-      <p class="about-editorial__body">{{ section.settings.closing_text | escape }}</p>
-      {%- if section.settings.closing_button != blank -%}
+      <h2 class="about-editorial__heading">{{ closing_heading | escape }}</h2>
+      <p class="about-editorial__body">{{ closing_text | escape }}</p>
+      {%- if closing_button != blank -%}
         <a class="about-editorial__link" href="{{ section.settings.closing_link | default: routes.all_products_collection_url | escape }}">
-          <span>{{ section.settings.closing_button | escape }}</span><span aria-hidden="true">&longrightarrow;</span>
+          <span>{{ closing_button | escape }}</span><span aria-hidden="true">&longrightarrow;</span>
         </a>
       {%- endif -%}
     </div>
