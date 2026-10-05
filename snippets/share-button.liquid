@@ -1,3 +1,4 @@
+{%- capture localized_share_label -%}{%- render 'localized-theme-text', text: block.settings.share_label -%}{%- endcapture -%}
 {% comment %}
   Renders share button.
   Accepts:
@@ -15,12 +16,12 @@
 <share-button id="Share-{{ section.id }}" class="share-button quick-add-hidden" {{ block.shopify_attributes }}>
   <button class="share-button__button hidden">
     <span class="svg-wrapper">{{ 'icon-share.svg' | inline_asset_content }}</span>
-    {{ block.settings.share_label | escape }}
+    {{ localized_share_label | escape }}
   </button>
   <details id="Details-{{ block.id }}-{{ section.id }}">
     <summary class="share-button__button">
       <span class="svg-wrapper">{{ 'icon-share.svg' | inline_asset_content }}</span>
-      {{ block.settings.share_label | escape }}
+      {{ localized_share_label | escape }}
     </summary>
     <div class="share-button__fallback motion-reduce">
       <div class="field">

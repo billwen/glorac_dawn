@@ -1,9 +1,9 @@
 {{ 'section-editorial-footer.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign shop_names = 'Shop All|Sleep|Lounge|Dresses|Scarves|Glow' | split: '|'
+  assign shop_names = 'shop_all|sleep|lounge|dresses|scarves|glow' | split: '|'
   assign shop_handles = 'shop-all|sleep|lounge|dresses|scarves|glow' | split: '|'
-  assign about_names = 'Our Story|Sustainability|Size Guide|Care|Journal|Contact' | split: '|'
+  assign about_names = 'our_story|sustainability|size_guide|care|journal|contact' | split: '|'
   assign about_handles = 'about|sustainability|size-guide|care-guide|journal|contact' | split: '|'
   assign newsletter_id = 'FooterNewsletter-' | append: section.id
   assign social_platforms = 'instagram|pinterest|facebook|youtube' | split: '|'
@@ -15,11 +15,11 @@
     <div class="editorial-footer__grid">
       <div class="editorial-footer__brand">
         <a class="editorial-footer__logo" href="{{ routes.root_url }}">GLORAC</a>
-        <p class="editorial-footer__tagline">SILK FOR A MORE BEAUTIFUL YOU</p>
+        <p class="editorial-footer__tagline">{{ 'glorac.footer.tagline' | t | escape }}</p>
       </div>
 
-      <nav class="editorial-footer__nav" aria-label="Footer shop">
-        <h2 class="editorial-footer__heading">SHOP</h2>
+      <nav class="editorial-footer__nav" aria-label="{{ 'glorac.footer.shop_label' | t | escape }}">
+        <h2 class="editorial-footer__heading">{{ 'glorac.footer.shop_heading' | t | escape }}</h2>
         <ul class="editorial-footer__links" role="list">
           {%- if section.settings.shop_menu != blank -%}
             {%- for link in section.settings.shop_menu.links -%}
@@ -27,19 +27,20 @@
             {%- endfor -%}
           {%- else -%}
             {%- for name in shop_names -%}
+              {%- assign menu_translation_key = 'glorac.footer.' | append: name -%}
               {%- assign collection_handle = shop_handles[forloop.index0] -%}
               {%- assign collection_url = collections[collection_handle].url -%}
               {%- if collection_url == blank -%}
                 {%- assign collection_url = routes.collections_url | append: '/' | append: collection_handle -%}
               {%- endif -%}
-              <li><a href="{{ collection_url }}">{{ name }}</a></li>
+              <li><a href="{{ collection_url }}">{{ menu_translation_key | t | escape }}</a></li>
             {%- endfor -%}
           {%- endif -%}
         </ul>
       </nav>
 
-      <nav class="editorial-footer__nav" aria-label="Footer about">
-        <h2 class="editorial-footer__heading">ABOUT</h2>
+      <nav class="editorial-footer__nav" aria-label="{{ 'glorac.footer.about_label' | t | escape }}">
+        <h2 class="editorial-footer__heading">{{ 'glorac.footer.about_heading' | t | escape }}</h2>
         <ul class="editorial-footer__links" role="list">
           {%- if section.settings.about_menu != blank -%}
             {%- for link in section.settings.about_menu.links -%}
@@ -47,6 +48,7 @@
             {%- endfor -%}
           {%- else -%}
             {%- for name in about_names -%}
+              {%- assign menu_translation_key = 'glorac.footer.' | append: name -%}
               {%- liquid
                 assign page_handle = about_handles[forloop.index0]
                 assign page_url = pages[page_handle].url
@@ -58,9 +60,9 @@
               -%}
               <li>
                 {%- if page_url != blank -%}
-                  <a href="{{ page_url }}">{{ name }}</a>
+                  <a href="{{ page_url }}">{{ menu_translation_key | t | escape }}</a>
                 {%- else -%}
-                  <span>{{ name }}</span>
+                  <span>{{ menu_translation_key | t | escape }}</span>
                 {%- endif -%}
               </li>
             {%- endfor -%}
@@ -69,18 +71,18 @@
       </nav>
 
       <div class="editorial-footer__newsletter">
-        <h2 class="editorial-footer__heading">JOIN OUR WORLD</h2>
-        <p class="editorial-footer__newsletter-text">Be the first to know about new collections,<br>exclusive offers and beautiful stories.</p>
+        <h2 class="editorial-footer__heading">{{ 'glorac.footer.newsletter_heading' | t | escape }}</h2>
+        <p class="editorial-footer__newsletter-text">{{ 'glorac.footer.newsletter_text_html' | t }}</p>
         {%- form 'customer', id: newsletter_id -%}
           <input type="hidden" name="contact[tags]" value="newsletter">
           <div class="editorial-footer__email-field">
-            <label class="visually-hidden" for="{{ newsletter_id }}-email">Your email address</label>
+            <label class="visually-hidden" for="{{ newsletter_id }}-email">{{ 'glorac.footer.email_label' | t | escape }}</label>
             <input
               id="{{ newsletter_id }}-email"
               type="email"
               name="contact[email]"
               value="{{ form.email }}"
-              placeholder="Your email address"
+              placeholder="{{ 'glorac.footer.email_label' | t | escape }}"
               autocomplete="email"
               autocorrect="off"
               autocapitalize="off"
@@ -92,7 +94,7 @@
                 aria-describedby="{{ newsletter_id }}-success"
               {% endif %}
             >
-            <button type="submit" name="commit" aria-label="Subscribe to our newsletter">
+            <button type="submit" name="commit" aria-label="{{ 'glorac.footer.subscribe_label' | t | escape }}">
               {% render 'icon-landing-arrow' %}
             </button>
           </div>
@@ -108,12 +110,12 @@
       </div>
 
       <div class="editorial-footer__closing">
-        <p>A SOFTER<br>BRIGHTER,<br>MORE BEAUTIFUL<br>TOMORROW</p>
+        <p>{{ 'glorac.footer.closing_html' | t }}</p>
         <span class="editorial-footer__closing-rule" aria-hidden="true"></span>
       </div>
     </div>
     <div class="editorial-footer__bottom">
-      <p class="editorial-footer__copyright">&copy; {{ 'now' | date: '%Y' }} GLORAC. All rights reserved.</p>
+      <p class="editorial-footer__copyright">&copy; {{ 'now' | date: '%Y' }} GLORAC. {{ 'glorac.footer.copyright' | t | escape }}</p>
       <ul class="editorial-footer__social" role="list">
         {%- for platform in social_platforms -%}
           {%- liquid

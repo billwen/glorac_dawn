@@ -1,3 +1,7 @@
+{%- capture localized_text -%}{%- render 'localized-theme-text', text: section.settings.text -%}{%- endcapture -%}
+{%- capture localized_heading_second_line -%}{%- render 'localized-theme-text', text: section.settings.heading_second_line -%}{%- endcapture -%}
+{%- capture localized_heading -%}{%- render 'localized-theme-text', text: section.settings.heading -%}{%- endcapture -%}
+{%- capture localized_label -%}{%- render 'localized-theme-text', text: section.settings.label -%}{%- endcapture -%}
 {%- liquid
   assign signature_collection = section.settings.collection
   assign signature_image = section.settings.image | default: signature_collection.image | default: signature_collection.featured_image
@@ -24,14 +28,14 @@
         }}
       {%- endif -%}
       <div class="signature-banner__content">
-        <p class="signature-banner__label">{{ section.settings.label | escape }}</p>
+        <p class="signature-banner__label">{{ localized_label | escape }}</p>
         <h2 class="signature-banner__heading">
-          <span>{{ section.settings.heading | escape }}</span>
-          <span>{{ section.settings.heading_second_line | escape }}</span>
+          <span>{{ localized_heading | escape }}</span>
+          <span>{{ localized_heading_second_line | escape }}</span>
         </h2>
-        <p class="signature-banner__text">{{ section.settings.text | escape }}</p>
+        <p class="signature-banner__text">{{ localized_text | escape }}</p>
         <a class="signature-banner__button" href="{{ signature_url | escape }}">
-          <span>EXPLORE SIGNATURE</span>
+          <span>{{ 'glorac.explore_signature' | t | escape }}</span>
           {% render 'icon-landing-arrow' %}
         </a>
       </div>

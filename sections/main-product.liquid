@@ -224,7 +224,7 @@
                         </details>
                       {%- endif -%}
                     {%- else -%}
-                      <p class="product__description-preview">Product details coming soon.</p>
+                      <p class="product__description-preview">{{ 'glorac.product_details_pending' | t | escape }}</p>
                     {%- endif -%}
                   </div>
                 {%- when 'sku' -%}

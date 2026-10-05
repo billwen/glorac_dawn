@@ -6,6 +6,6 @@
     aria-controls="SizeGuide-{{ section.id }}"
   >
     {{ 'icon-size-guide.svg' | inline_asset_content }}
-    <span>Vad är min storlek?</span>
+    <span>{{ 'glorac.size_guide_trigger' | t | escape }}</span>
   </button>
 </modal-opener>

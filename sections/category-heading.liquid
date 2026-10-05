@@ -1,3 +1,5 @@
+{%- capture localized_tagline -%}{%- render 'localized-theme-text', text: section.settings.tagline -%}{%- endcapture -%}
+{%- capture localized_heading -%}{%- render 'localized-theme-text', text: section.settings.heading -%}{%- endcapture -%}
 {%- style -%}
   .category-heading__row {
     display: grid;
@@ -81,8 +83,8 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="category-heading__row page-width">
-    <h2 class="category-heading__title">{{ section.settings.heading | remove: '--' | strip | escape }}</h2>
-    <p class="category-heading__tagline">{{ section.settings.tagline | escape | newline_to_br }}</p>
+    <h2 class="category-heading__title">{{ localized_heading | remove: '--' | strip | escape }}</h2>
+    <p class="category-heading__tagline">{{ localized_tagline | escape | newline_to_br }}</p>
   </div>
 </div>
 

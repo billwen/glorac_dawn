@@ -1,3 +1,4 @@
+{%- capture localized_heading -%}{%- render 'localized-theme-text', text: section.settings.heading -%}{%- endcapture -%}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-related-products.css' | asset_url | stylesheet_tag }}
@@ -29,7 +30,7 @@
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading }}
+        {{ localized_heading }}
       </h2>
       <ul
         class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"

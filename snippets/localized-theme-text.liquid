@@ -1,0 +1,71 @@
+{%- comment -%}
+  Translate known theme defaults without overriding custom or Shopify-translated copy.
+  Return raw text so callers can escape it or render rich text as appropriate.
+{%- endcomment -%}
+{%- liquid
+  assign localized_text = text
+  if request.locale.iso_code == 'sv'
+    assign normalized_text = text | strip_newlines | strip
+    case normalized_text
+      when 'AUTUMN / WINTER 2026'
+        assign localized_text = 'glorac.copy.season' | t
+      when 'Soft layers.Fluid silk.Quiet elegance.'
+        assign localized_text = 'glorac.copy.hero_heading' | t
+      when 'FOR A MORE BEAUTIFUL EVERYDAY'
+        assign localized_text = 'glorac.copy.hero_tagline' | t
+      when 'DISCOVER THE EDIT'
+        assign localized_text = 'glorac.copy.hero_button' | t
+      when '“Comfortis a form ofluxury.”'
+        assign localized_text = 'glorac.copy.hero_quote' | t
+      when 'SHOP BY CATEGORY'
+        assign localized_text = 'glorac.copy.category_heading' | t
+      when 'EXCEPTIONAL PIECESFOR A MORE BEAUTIFUL YOU'
+        assign localized_text = 'glorac.copy.category_tagline' | t
+      when 'Sleep'
+        assign localized_text = 'glorac.copy.sleep' | t
+      when 'Lounge'
+        assign localized_text = 'glorac.copy.lounge' | t
+      when 'Dresses'
+        assign localized_text = 'glorac.copy.dresses' | t
+      when 'Scarves'
+        assign localized_text = 'glorac.copy.scarves' | t
+      when 'SIGNATURE'
+        assign localized_text = 'glorac.copy.signature' | t
+      when 'The Essence'
+        assign localized_text = 'glorac.copy.signature_heading' | t
+      when 'of GLORAC'
+        assign localized_text = 'glorac.copy.signature_second_line' | t
+      when 'Timeless pieces for a more beautiful everyday.'
+        assign localized_text = 'glorac.copy.signature_text' | t
+      when 'Glow'
+        assign localized_text = 'glorac.copy.glow' | t
+      when 'Bloom'
+        assign localized_text = 'glorac.copy.bloom' | t
+      when 'Rituals fora brighter you.'
+        assign localized_text = 'glorac.copy.glow_text' | t
+      when 'Softness infull expression.'
+        assign localized_text = 'glorac.copy.bloom_text' | t
+      when 'Welcome to our store'
+        assign localized_text = 'glorac.copy.welcome' | t
+      when 'Opening soon'
+        assign localized_text = 'glorac.copy.opening_soon' | t
+      when '<p>Be the first to know when we launch.</p>'
+        assign localized_text = 'glorac.copy.launch_text_html' | t
+      when 'Collections'
+        assign localized_text = 'glorac.copy.collections' | t
+      when 'You may also like'
+        assign localized_text = 'glorac.copy.related_products' | t
+      when 'Share'
+        assign localized_text = 'glorac.copy.share' | t
+      when 'THE FINEST FABRICS'
+        assign localized_text = 'glorac.copy.finest_fabrics' | t
+      when 'REFINED DETAILS'
+        assign localized_text = 'glorac.copy.refined_details' | t
+      when 'CONSIDERED DESIGN'
+        assign localized_text = 'glorac.copy.considered_design' | t
+      when 'LASTING BEAUTY'
+        assign localized_text = 'glorac.copy.lasting_beauty' | t
+    endcase
+  endif
+-%}
+{{- localized_text -}}

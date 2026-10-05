@@ -15,6 +15,8 @@
           assign banner_url = routes.collections_url | append: '/' | append: banner_handle
         endif
       -%}
+      {%- capture localized_name -%}{%- render 'localized-theme-text', text: banner_name -%}{%- endcapture -%}
+      {%- capture localized_description -%}{%- render 'localized-theme-text', text: block.settings.text -%}{%- endcapture -%}
       <div class="collection-duo__card" {{ block.shopify_attributes }}>
         {%- if banner_image != blank -%}
           {{
@@ -28,10 +30,10 @@
           }}
         {%- endif -%}
         <div class="collection-duo__content">
-          <h2 class="collection-duo__name">{{ banner_name | upcase | escape }}</h2>
-          <p class="collection-duo__description">{{ block.settings.text | escape | newline_to_br }}</p>
+          <h2 class="collection-duo__name">{{ localized_name | upcase | escape }}</h2>
+          <p class="collection-duo__description">{{ localized_description | escape | newline_to_br }}</p>
           <a class="collection-duo__button" href="{{ banner_url | escape }}">
-            <span>DISCOVER {{ banner_name | upcase | escape }}</span>
+            <span>{{ 'glorac.discover_collection' | t: name: localized_name | upcase | escape }}</span>
             {% render 'icon-landing-arrow' %}
           </a>
         </div>

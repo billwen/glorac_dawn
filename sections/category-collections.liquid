@@ -172,6 +172,7 @@
           assign category_url = routes.collections_url | append: '/' | append: category_handle
         endif
       -%}
+      {%- capture localized_name -%}{%- render 'localized-theme-text', text: category_name -%}{%- endcapture -%}
       <li class="category-collections__card" {{ block.shopify_attributes }}>
         {%- if category_image != blank -%}
           {{
@@ -189,14 +190,14 @@
           {{ placeholder_image | placeholder_svg_tag: 'category-collections__placeholder' }}
         {%- endif -%}
         <div class="category-collections__content">
-          <h3 class="category-collections__name">{{ category_name | escape }}</h3>
+          <h3 class="category-collections__name">{{ localized_name | escape }}</h3>
           {%- if category_collection.description != blank -%}
             <div class="category-collections__description rte">
               {{ category_collection.description }}
             </div>
           {%- endif -%}
           <a class="category-collections__button" href="{{ category_url | escape }}">
-            <span>SHOP {{ category_name | upcase | escape }}</span>
+            <span>{{ 'glorac.shop_category' | t: name: localized_name | upcase | escape }}</span>
             {% render 'icon-landing-arrow' %}
           </a>
         </div>

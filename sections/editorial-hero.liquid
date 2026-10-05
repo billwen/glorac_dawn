@@ -1,3 +1,8 @@
+{%- capture localized_quote -%}{%- render 'localized-theme-text', text: section.settings.quote -%}{%- endcapture -%}
+{%- capture localized_button_label -%}{%- render 'localized-theme-text', text: section.settings.button_label -%}{%- endcapture -%}
+{%- capture localized_tagline -%}{%- render 'localized-theme-text', text: section.settings.tagline -%}{%- endcapture -%}
+{%- capture localized_heading -%}{%- render 'localized-theme-text', text: section.settings.heading -%}{%- endcapture -%}
+{%- capture localized_season -%}{%- render 'localized-theme-text', text: section.settings.season -%}{%- endcapture -%}
 {{ 'section-editorial-hero.css' | asset_url | stylesheet_tag }}
 
 <div class="editorial-hero">
@@ -14,18 +19,18 @@
     }}
   {%- endif -%}
   <div class="editorial-hero__content">
-    <p class="editorial-hero__season">{{ section.settings.season | escape }}</p>
-    <h1 class="editorial-hero__heading">{{ section.settings.heading | escape | newline_to_br }}</h1>
-    <p class="editorial-hero__tagline">{{ section.settings.tagline | escape }}</p>
+    <p class="editorial-hero__season">{{ localized_season | escape }}</p>
+    <h1 class="editorial-hero__heading">{{ localized_heading | escape | newline_to_br }}</h1>
+    <p class="editorial-hero__tagline">{{ localized_tagline | escape }}</p>
     {%- if section.settings.button_label != blank -%}
       <a class="editorial-hero__button" href="{{ section.settings.button_link | default: routes.all_products_collection_url | escape }}">
-        <span>{{ section.settings.button_label | escape }}</span>
+        <span>{{ localized_button_label | escape }}</span>
         {% render 'icon-landing-arrow' %}
       </a>
     {%- endif -%}
   </div>
   {%- if section.settings.quote != blank -%}
-    <p class="editorial-hero__quote">{{ section.settings.quote | escape | newline_to_br }}</p>
+    <p class="editorial-hero__quote">{{ localized_quote | escape | newline_to_br }}</p>
   {%- endif -%}
 </div>
 

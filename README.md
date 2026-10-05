@@ -97,3 +97,9 @@ Ensure that you follow the list of [theme store requirements](https://shopify.de
 ## License
 
 Copyright (c) 2021-present Shopify Inc. See [LICENSE](/LICENSE.md) for further details.
+
+## Swedish storefront content
+
+Theme interface copy is provided in `locales/en.default.json` and `locales/sv.json`. Fixed labels use Liquid's translation filter. `snippets/localized-theme-text.liquid` translates the known English theme settings used by the homepage, announcements, password page, collection-list heading, recommendations, and Share buttons. Custom text and already-translated values are preserved; translate new copy in Shopify Translate & Adapt when changing these settings. Collection links keep their original handles when display names are translated. About and Measuring translations are in the `about_editorial` and `measuring_guide` locale namespaces.
+
+For a fully Swedish storefront, upload this theme and publish Swedish in Shopify Settings → Languages. Use Translate & Adapt to translate Shopify-managed products, collections and descriptions, navigation menus, pages (including sustainability, care and size-guide content), blog articles, supported metafields, image descriptions, and SEO titles/descriptions. These records are stored in Shopify and cannot be verified or translated from this theme repository. Preview the Swedish storefront to confirm their coverage. Checkout and app content must be checked separately in Shopify.
