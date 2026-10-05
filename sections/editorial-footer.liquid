@@ -123,6 +123,10 @@
             assign social_url = settings[social_setting]
             assign social_name = social_names[forloop.index0]
             assign social_icon = 'icon-' | append: platform | append: '.svg'
+            if platform == 'instagram'
+              assign social_url = 'https://www.instagram.com/glorac_silk'
+              assign social_icon = 'icon-instagram-footer.svg'
+            endif
           -%}
           <li>
             {%- if social_url != blank -%}
