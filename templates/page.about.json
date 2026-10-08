@@ -15,6 +15,7 @@
         "fabric": {
           "type": "detail",
           "settings": {
+            "image": "shopify://shop_images/about_made_with_intention_1.png",
             "collection": "sleepware",
             "title": "THE FINEST FABRICS"
           }
@@ -22,6 +23,7 @@
         "details": {
           "type": "detail",
           "settings": {
+            "image": "shopify://shop_images/about_made_with_intention_2.png",
             "collection": "accessories",
             "title": "REFINED DETAILS"
           }
@@ -29,23 +31,16 @@
         "design": {
           "type": "detail",
           "settings": {
+            "image": "shopify://shop_images/about_made_with_intention_3.png",
             "collection": "clothes",
             "title": "CONSIDERED DESIGN"
-          }
-        },
-        "beauty": {
-          "type": "detail",
-          "settings": {
-            "collection": "scarves",
-            "title": "LASTING BEAUTY"
           }
         }
       },
       "block_order": [
         "fabric",
         "details",
-        "design",
-        "beauty"
+        "design"
       ],
       "settings": {
         "hero_image": "shopify://shop_images/Brand_Story.png",
