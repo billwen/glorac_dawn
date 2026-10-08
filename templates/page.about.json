@@ -1,40 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "about": {
       "type": "about-editorial",
-      "settings": {
-        "hero_image": "shopify://shop_images/Brand_Story.png",
-        "philosophy_image": "shopify://shop_images/Brand_Philosophy.png",
-        "craft_link": "shopify://collections/sleep",
-        "closing_link": "shopify://collections/shop-all"
-      },
       "blocks": {
         "fabric": {
           "type": "detail",
           "settings": {
-            "title": "THE FINEST FABRICS",
-            "collection": "sleep"
+            "collection": "sleep",
+            "title": "THE FINEST FABRICS"
           }
         },
         "details": {
           "type": "detail",
           "settings": {
-            "title": "REFINED DETAILS",
-            "collection": "lounge"
+            "collection": "accessories",
+            "title": "REFINED DETAILS"
           }
         },
         "design": {
           "type": "detail",
           "settings": {
-            "title": "CONSIDERED DESIGN",
-            "collection": "dresses"
+            "collection": "dresses",
+            "title": "CONSIDERED DESIGN"
           }
         },
         "beauty": {
           "type": "detail",
           "settings": {
-            "title": "LASTING BEAUTY",
-            "collection": "scarves"
+            "collection": "scarves",
+            "title": "LASTING BEAUTY"
           }
         }
       },
@@ -43,7 +46,13 @@
         "details",
         "design",
         "beauty"
-      ]
+      ],
+      "settings": {
+        "hero_image": "shopify://shop_images/Brand_Story.png",
+        "philosophy_image": "shopify://shop_images/Brand_Philosophy.png",
+        "craft_link": "shopify://collections/sleep",
+        "closing_link": "shopify://collections/shop-all"
+      }
     }
   },
   "order": [

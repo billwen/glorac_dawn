@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -9,7 +18,7 @@
         "tagline": "FOR A MORE BEAUTIFUL EVERYDAY",
         "button_label": "DISCOVER THE EDIT",
         "button_link": "shopify://collections/shop-all",
-        "quote": "\u201cComfort\nis a form of\nluxury.\u201d"
+        "quote": "“Comfort\nis a form of\nluxury.”"
       }
     },
     "category_heading": {
@@ -33,7 +42,7 @@
         "lounge": {
           "type": "collection",
           "settings": {
-            "collection": "lounge",
+            "collection": "accessories",
             "name": "Lounge"
           }
         },
