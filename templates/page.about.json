@@ -49,7 +49,8 @@
       ],
       "settings": {
         "hero_image": "shopify://shop_images/Brand_Story.png",
-        "philosophy_image": "shopify://shop_images/Brand_Philosophy.png",
+        "philosophy_image": "shopify://shop_images/about_philosophy_1.png",
+        "closing_image": "shopify://shop_images/about_Footer_Banner_in_Story.png",
         "craft_link": "shopify://collections/sleepware",
         "closing_link": "shopify://collections/shop-all"
       }
