@@ -29,7 +29,7 @@
         "design": {
           "type": "detail",
           "settings": {
-            "collection": "dresses",
+            "collection": "clothes",
             "title": "CONSIDERED DESIGN"
           }
         },

@@ -49,7 +49,7 @@
         "dresses": {
           "type": "collection",
           "settings": {
-            "collection": "dresses",
+            "collection": "clothes",
             "name": "Dresses"
           }
         },
