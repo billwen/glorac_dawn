@@ -118,27 +118,54 @@
 
 @media screen and (max-width: 749px) {
   .signature-banner__panel {
-    aspect-ratio: auto;
-    min-height: 0;
-  }
-
-  .signature-banner__image {
-    position: relative;
-    display: block;
-    aspect-ratio: 3 / 1;
-    height: auto;
+    aspect-ratio: 2 / 1;
+    min-height: 22rem;
   }
 
   .signature-banner__panel::after {
-    display: none;
+    background: linear-gradient(90deg, rgba(237, 228, 214, 0.92), rgba(237, 228, 214, 0.65) 45%, transparent);
   }
 
   .signature-banner__content {
-    width: 100%;
-    padding: 2.4rem;
+    width: 70%;
+    min-width: 0;
+    padding: clamp(1.6rem, 4vw, 3rem);
+    overflow-wrap: anywhere;
+  }
+
+  .signature-banner__label {
+    margin-bottom: 0.8rem;
+    font-size: clamp(0.9rem, 2.4vw, 1.2rem);
+    letter-spacing: 0.24em;
+  }
+
+  .signature-banner__label::after {
+    width: 4rem;
+    margin-top: 0.6rem;
   }
 
   .signature-banner__heading {
-    font-size: 3.6rem;
+    margin-bottom: 0.8rem;
+    font-size: clamp(2.4rem, 6.4vw, 3.6rem);
+  }
+
+  .signature-banner__text {
+    margin-bottom: 1.2rem;
+    font-size: clamp(1.1rem, 2.9vw, 1.4rem);
+  }
+
+  .signature-banner__button {
+    gap: 0.8rem;
+    max-width: 100%;
+    min-height: 3.2rem;
+    padding: 0.8rem 1rem;
+    font-size: clamp(0.9rem, 2.4vw, 1.1rem);
+    letter-spacing: 0.08em;
+  }
+
+  .signature-banner__button svg {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }

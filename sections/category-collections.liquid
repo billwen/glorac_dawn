@@ -133,26 +133,35 @@
     }
 
     .category-collections__content {
-      padding: 1.2rem;
+      min-width: 0;
+      padding: clamp(1rem, 3vw, 1.6rem);
+      overflow-wrap: anywhere;
     }
 
     .category-collections__name {
-      font-size: clamp(1.6rem, 4.6vw, 2.4rem);
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      letter-spacing: 0.04em;
     }
 
     .category-collections__description {
       margin-bottom: 0.8rem;
-      font-size: 1.2rem;
+      font-size: clamp(1.1rem, 2.9vw, 1.4rem);
     }
 
     .category-collections__button {
       gap: 0.6rem;
+      max-width: 100%;
       min-height: 3.2rem;
       padding: 0.7rem 0.8rem;
-      font-size: 0.9rem;
+      font-size: clamp(0.9rem, 2.4vw, 1.1rem);
+    }
+
+    .category-collections__button span {
+      min-width: 0;
     }
 
     .category-collections__button svg {
+      flex-shrink: 0;
       width: 1.2rem;
       height: 1.2rem;
     }

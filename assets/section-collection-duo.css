@@ -109,22 +109,35 @@
     aspect-ratio: 2 / 1;
   }
 
+  .collection-duo__card::after {
+    background: linear-gradient(transparent 25%, rgba(20, 14, 10, 0.5));
+  }
+
   .collection-duo__content {
     padding: 1.4rem 1.6rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .collection-duo__name {
-    font-size: 2rem;
+    font-size: clamp(2rem, 5.3vw, 3rem);
   }
 
   .collection-duo__description {
     margin-bottom: 0.8rem;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 3.2vw, 1.6rem);
   }
 
   .collection-duo__button {
+    max-width: 100%;
     min-height: 3.2rem;
     padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
+    font-size: clamp(1rem, 2.6vw, 1.2rem);
+  }
+
+  .collection-duo__button svg {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
