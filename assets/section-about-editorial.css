@@ -112,7 +112,8 @@
   text-align: left;
 }
 
-.about-editorial__craft {
+.about-editorial__craft,
+.about-editorial__certification {
   padding: clamp(2.8rem, 2.5vw, 4.4rem) clamp(1.6rem, 2.5vw, 4.8rem);
   text-align: center;
 }
@@ -186,6 +187,21 @@
   outline-offset: 4px;
 }
 
+.about-editorial__certification-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(1.6rem, 2vw, 3.2rem);
+  max-width: 160rem;
+  margin: 0 auto;
+}
+
+.about-editorial__certification-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .about-editorial__closing {
   position: relative;
   display: grid;
@@ -225,6 +241,10 @@
 }
 
 @media screen and (max-width: 749px) {
+  .about-editorial__certification-images {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .about-editorial__philosophy {
     grid-template-columns: minmax(0, 1fr);
   }

@@ -13,6 +13,7 @@
   assign craft_heading = section.settings.craft_heading
   assign craft_text = section.settings.craft_text
   assign craft_button = section.settings.craft_button
+  assign certification_heading = section.settings.certification_heading
   assign closing_heading = section.settings.closing_heading
   assign closing_text = section.settings.closing_text
   assign closing_button = section.settings.closing_button
@@ -29,6 +30,7 @@
     assign craft_heading = 'about_editorial.craft_heading' | t
     assign craft_text = 'about_editorial.craft_text_html' | t
     assign craft_button = 'about_editorial.craft_button' | t
+    assign certification_heading = 'about_editorial.certification_heading' | t
     assign closing_heading = 'about_editorial.closing_heading' | t
     assign closing_text = 'about_editorial.closing_text' | t
     assign closing_button = 'about_editorial.closing_button' | t
@@ -116,6 +118,20 @@
       </a>
     {%- endif -%}
   </div>
+
+  {%- if section.settings.certification_fabric_image != blank or section.settings.certification_oeko_tex_image != blank -%}
+    <div class="about-editorial__certification">
+      <h2 class="about-editorial__craft-heading">{{ certification_heading | escape }}</h2>
+      <div class="about-editorial__certification-images">
+        {%- if section.settings.certification_fabric_image != blank -%}
+          {{ section.settings.certification_fabric_image | image_url: width: 2000 | image_tag: widths: '400, 600, 900, 1200, 1600, 2000', sizes: '(min-width: 750px) 50vw, 100vw', loading: 'lazy', class: 'about-editorial__certification-image' }}
+        {%- endif -%}
+        {%- if section.settings.certification_oeko_tex_image != blank -%}
+          {{ section.settings.certification_oeko_tex_image | image_url: width: 2000 | image_tag: widths: '400, 600, 900, 1200, 1600, 2000', sizes: '(min-width: 750px) 50vw, 100vw', loading: 'lazy', class: 'about-editorial__certification-image' }}
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
 
   <div class="about-editorial__closing">
     {%- if closing_image != blank -%}
@@ -249,6 +265,26 @@
       "type": "url",
       "id": "craft_link",
       "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Certified with care"
+    },
+    {
+      "type": "text",
+      "id": "certification_heading",
+      "label": "Heading",
+      "default": "CERTIFIED WITH CARE"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_fabric_image",
+      "label": "Fabric image"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_oeko_tex_image",
+      "label": "OEKO-TEX image"
     },
     {
       "type": "header",
