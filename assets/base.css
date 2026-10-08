@@ -88,6 +88,12 @@ textarea {
 
 /* base */
 
+/* Match the portrait viewport width of iPhone SE (2022) and iPhone mini models. */
+html,
+body {
+  min-width: 375px;
+}
+
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
