@@ -15,7 +15,7 @@
         "fabric": {
           "type": "detail",
           "settings": {
-            "collection": "sleep",
+            "collection": "sleepware",
             "title": "THE FINEST FABRICS"
           }
         },
@@ -50,7 +50,7 @@
       "settings": {
         "hero_image": "shopify://shop_images/Brand_Story.png",
         "philosophy_image": "shopify://shop_images/Brand_Philosophy.png",
-        "craft_link": "shopify://collections/sleep",
+        "craft_link": "shopify://collections/sleepware",
         "closing_link": "shopify://collections/shop-all"
       }
     }
