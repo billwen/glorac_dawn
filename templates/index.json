@@ -46,11 +46,11 @@
             "name": "Accessories"
           }
         },
-        "dresses": {
+        "clothes": {
           "type": "collection",
           "settings": {
-            "collection": "dresses",
-            "name": "Dresses"
+            "collection": "clothes",
+            "name": "Clothes"
           }
         },
         "scarves": {
@@ -63,7 +63,7 @@
       },
       "block_order": [
         "sleepware",
-        "dresses",
+        "clothes",
         "scarves",
         "accessories"
       ],
