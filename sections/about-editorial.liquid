@@ -60,10 +60,12 @@
       <p class="about-editorial__eyebrow">{{ story_label | escape }}</p>
       <h1 class="about-editorial__heading">{{ story_heading | escape }}<br><em>{{ story_subheading | escape }}</em></h1>
     </div>
-    <div class="about-editorial__body rte">{{ story_text }}</div>
-    {%- if story_quote != blank -%}
-      <p class="about-editorial__quote">{{ story_quote | escape }}</p>
-    {%- endif -%}
+    <div class="about-editorial__story-content">
+      <div class="about-editorial__body rte">{{ story_text }}</div>
+      {%- if story_quote != blank -%}
+        <p class="about-editorial__quote">{{ story_quote | escape }}</p>
+      {%- endif -%}
+    </div>
   </div>
 
   <div class="about-editorial__philosophy">
