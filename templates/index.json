@@ -32,24 +32,24 @@
     "category_collections": {
       "type": "category-collections",
       "blocks": {
-        "sleep": {
+        "sleepware": {
           "type": "collection",
           "settings": {
             "collection": "sleepware",
-            "name": "Sleep"
+            "name": "Sleepwear"
           }
         },
-        "lounge": {
+        "accessories": {
           "type": "collection",
           "settings": {
-            "collection": "accessories",
+            "collection": "lounge",
             "name": "Lounge"
           }
         },
         "dresses": {
           "type": "collection",
           "settings": {
-            "collection": "clothes",
+            "collection": "dresses",
             "name": "Dresses"
           }
         },
@@ -62,10 +62,10 @@
         }
       },
       "block_order": [
-        "sleep",
-        "lounge",
+        "sleepware",
         "dresses",
-        "scarves"
+        "scarves",
+        "accessories"
       ],
       "settings": {
         "color_scheme": "scheme-1"
