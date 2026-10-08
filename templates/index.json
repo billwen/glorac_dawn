@@ -42,8 +42,8 @@
         "accessories": {
           "type": "collection",
           "settings": {
-            "collection": "lounge",
-            "name": "Lounge"
+            "collection": "accessories",
+            "name": "Accessories"
           }
         },
         "dresses": {
