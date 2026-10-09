@@ -52,15 +52,16 @@
 
 .editorial-footer__tagline {
   margin: 0.8rem 0 0;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  letter-spacing: 0.28em;
   white-space: nowrap;
 }
 
 .editorial-footer__heading {
   margin: 0 0 1.3rem;
   color: #43372e;
+}
+
+.editorial-footer__tagline,
+.editorial-footer__heading {
   font-family: inherit;
   font-size: 1.1rem;
   font-weight: 400;
@@ -74,7 +75,9 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 1.3rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 400;
   line-height: 1.15;
   letter-spacing: 0.02em;
 }
@@ -233,17 +236,20 @@ a.editorial-footer__social-icon:hover {
 
   .editorial-footer__tagline {
     margin-top: 0.8rem;
-    font-size: 0.8rem;
   }
 
   .editorial-footer__heading {
     margin-bottom: 1.2rem;
+  }
+
+  .editorial-footer__tagline,
+  .editorial-footer__heading {
     font-size: 1rem;
   }
 
   .editorial-footer__links {
     gap: 0.8rem;
-    font-size: 1.3rem;
+    font-size: 0.9rem;
   }
 
   .editorial-footer__newsletter-text {

@@ -94,7 +94,7 @@
   border: 0;
   background: transparent;
   color: #fffaf1;
-  font-family: 'Bodoni Moda', 'Times New Roman', serif;
+  font-family: inherit;
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.2;
