@@ -76,7 +76,7 @@
   right: 3vw;
   bottom: 18%;
   margin: 0;
-  color: #584637;
+  color: #fff;
   font-size: clamp(1.4rem, 1.6vw, 2.8rem);
   font-style: italic;
   line-height: 1.15;
@@ -132,7 +132,6 @@
     right: 4%;
     bottom: 8%;
     max-width: 24%;
-    color: #fffaf1;
     font-size: clamp(1.1rem, 2.8vw, 1.8rem);
     line-height: 1.2;
     text-shadow: 0 1px 4px rgba(38, 29, 23, 0.5);
