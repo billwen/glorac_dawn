@@ -31,7 +31,7 @@
 }
 
 .editorial-hero__season {
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.4rem 2rem;
   font-size: clamp(1rem, 1.05vw, 1.6rem);
   line-height: 1.5;
   letter-spacing: 0.12em;
@@ -48,7 +48,7 @@
 }
 
 .editorial-hero__tagline {
-  margin: 0 0 1.8vw;
+  margin: 0 0 1.8vw 2rem;
   font-size: clamp(0.9rem, 0.9vw, 1.4rem);
   line-height: 1.5;
   letter-spacing: 0.32em;
@@ -57,7 +57,8 @@
 .editorial-hero__button {
   display: inline-flex;
   align-items: center;
-  max-width: 100%;
+  max-width: calc(100% - 2rem);
+  margin-left: 2rem;
   padding: 0 0 0.4rem;
   border: 0;
   border-bottom: 3px solid currentColor;
