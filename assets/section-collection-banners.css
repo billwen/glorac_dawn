@@ -52,9 +52,14 @@
 
 .signature-banner__text {
   max-width: 26rem;
-  margin: 0 0 2.4rem;
+  margin: 0 0 1.2rem;
+  color: #fffaf1;
+  font-family: 'Bodoni Moda', 'Times New Roman', serif;
   font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .signature-banner__text > :first-child {
@@ -72,6 +77,10 @@
 .signature-banner__text a {
   position: relative;
   z-index: 2;
+}
+
+.signature-banner__text :is(strong, b) {
+  font-weight: 400;
 }
 
 .signature-banner__button {
@@ -139,7 +148,7 @@
   }
 
   .signature-banner__text {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.8rem;
     font-size: clamp(1.1rem, 2.9vw, 1.4rem);
   }
 
