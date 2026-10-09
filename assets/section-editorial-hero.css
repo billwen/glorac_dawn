@@ -31,20 +31,10 @@
 }
 
 .editorial-hero__season {
-  margin: 0 0 1.4vw;
+  margin: 0 0 0.4rem;
   font-size: clamp(1rem, 1.05vw, 1.6rem);
   line-height: 1.5;
-  letter-spacing: 0.3em;
-}
-
-.editorial-hero__season::after {
-  content: '';
-  display: block;
-  width: 6vw;
-  max-width: 9rem;
-  height: 1px;
-  margin-top: 1vw;
-  background: rgba(255, 250, 241, 0.7);
+  letter-spacing: 0.12em;
 }
 
 .editorial-hero__heading {
@@ -67,19 +57,16 @@
 .editorial-hero__button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-  min-height: 4.4rem;
-  padding: 1.2rem 0;
+  max-width: 100%;
+  padding: 0 0 0.4rem;
   border: 0;
+  border-bottom: 1px solid currentColor;
   background: transparent;
   color: inherit;
   font-size: clamp(1rem, 0.9vw, 1.4rem);
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: 0.12em;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.3em;
+  text-decoration: none;
 }
 
 .editorial-hero__quote {
@@ -120,14 +107,7 @@
   }
 
   .editorial-hero__season {
-    margin-bottom: 0.8rem;
     font-size: clamp(0.9rem, 2.4vw, 1.2rem);
-    letter-spacing: 0.18em;
-  }
-
-  .editorial-hero__season::after {
-    width: 4rem;
-    margin-top: 0.6rem;
   }
 
   .editorial-hero__heading {
@@ -144,18 +124,7 @@
   }
 
   .editorial-hero__button {
-    gap: 0.8rem;
-    max-width: 100%;
-    min-height: 3.2rem;
-    padding: 0.8rem 0;
     font-size: clamp(0.9rem, 2.4vw, 1.2rem);
-    letter-spacing: 0.08em;
-  }
-
-  .editorial-hero__button svg {
-    flex-shrink: 0;
-    width: 1.2rem;
-    height: 1.2rem;
   }
 
   .editorial-hero__quote {
