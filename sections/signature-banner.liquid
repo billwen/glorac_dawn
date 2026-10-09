@@ -1,4 +1,3 @@
-{%- capture localized_label -%}{%- render 'localized-theme-text', text: section.settings.label -%}{%- endcapture -%}
 {%- liquid
   assign signature_collection = section.settings.collection
   assign signature_image = section.settings.image | default: signature_collection.image | default: signature_collection.featured_image
@@ -25,13 +24,12 @@
         }}
       {%- endif -%}
       <div class="signature-banner__content">
-        <p class="signature-banner__label">{{ localized_label | escape }}</p>
         <h2 class="signature-banner__heading">{{ signature_collection.title | escape }}</h2>
         {%- if signature_collection.description != blank -%}
           <div class="signature-banner__text rte">{{ signature_collection.description }}</div>
         {%- endif -%}
         <a class="signature-banner__button" href="{{ signature_url | escape }}">
-          <span>{{ 'glorac.explore_signature' | t | escape }}</span>
+          <span>{{ 'glorac.discover_collection' | t: name: signature_collection.title | upcase | escape }}</span>
           {% render 'icon-landing-arrow' %}
         </a>
       </div>
@@ -48,7 +46,6 @@
   "settings": [
     { "type": "collection", "id": "collection", "label": "Collection" },
     { "type": "image_picker", "id": "image", "label": "Image override" },
-    { "type": "text", "id": "label", "label": "Label", "default": "SIGNATURE" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
   ],
   "presets": [{ "name": "Signature banner" }]

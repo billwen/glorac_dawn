@@ -74,7 +74,6 @@
       "type": "signature-banner",
       "settings": {
         "collection": "signature",
-        "label": "SIGNATURE",
         "color_scheme": "scheme-1"
       }
     },
