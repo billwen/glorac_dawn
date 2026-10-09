@@ -54,6 +54,13 @@
   line-height: 1;
 }
 
+.header--reference .header-reference__wordmark {
+  /* Match the existing text's capital height and preserve the SVG proportions. */
+  width: auto;
+  height: 0.72em;
+  height: 1cap;
+}
+
 .header--reference .header__icons {
   align-items: center;
   gap: 0.8rem;

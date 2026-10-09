@@ -13,7 +13,9 @@
   <div class="editorial-footer__shell page-width">
     <div class="editorial-footer__grid">
       <div class="editorial-footer__brand">
-        <a class="editorial-footer__logo" href="{{ routes.root_url }}">GLORAC</a>
+        <a class="editorial-footer__logo" href="{{ routes.root_url }}">
+          <img src="{{ 'GLORAC.svg' | asset_url }}" alt="GLORAC" width="227" height="31" loading="lazy">
+        </a>
         <p class="editorial-footer__tagline">{{ 'glorac.footer.tagline' | t | escape }}</p>
       </div>
 

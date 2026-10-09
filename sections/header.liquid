@@ -199,7 +199,15 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <span class="h2">
+            <img
+              src="{{ 'GLORAC.svg' | asset_url }}"
+              class="header__heading-logo header-reference__wordmark"
+              alt="GLORAC"
+              width="227"
+              height="31"
+            >
+          </span>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -242,7 +250,15 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <span class="h2">
+            <img
+              src="{{ 'GLORAC.svg' | asset_url }}"
+              class="header__heading-logo header-reference__wordmark"
+              alt="GLORAC"
+              width="227"
+              height="31"
+            >
+          </span>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}

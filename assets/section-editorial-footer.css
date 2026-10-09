@@ -41,6 +41,15 @@
   text-decoration: none;
 }
 
+.editorial-footer__logo img {
+  display: block;
+  /* Keep the same capital height at each existing footer font size. */
+  width: auto;
+  max-width: 100%;
+  height: 0.72em;
+  height: 1cap;
+}
+
 .editorial-footer__tagline {
   margin: 0.8rem 0 0;
   font-size: 0.85rem;
