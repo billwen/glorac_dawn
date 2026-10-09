@@ -68,18 +68,23 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 2cqw;
-  min-width: 32cqw;
-  min-height: 5.4cqw;
-  padding: 1.4cqw 3cqw;
-  border: 1px solid #e9e2d6;
-  color: #43372e;
-  background: #f9f5ed;
-  font-family: 'Times New Roman', serif;
-  font-size: 1.7cqw;
+  gap: 1.2rem;
+  min-height: 4.4rem;
+  padding: 1rem 0;
+  border: 0;
+  color: #fffaf1;
+  background: transparent;
+  font-family: 'Bodoni Moda', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
   line-height: 1.2;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-decoration: none;
+}
+
+.collection-duo__button span {
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid currentColor;
 }
 
 .collection-duo__button::after {
@@ -87,10 +92,6 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-}
-
-.collection-duo__button:hover {
-  background: #fff;
 }
 
 .collection-duo__button:focus-visible::after {
@@ -129,10 +130,15 @@
   }
 
   .collection-duo__button {
+    gap: 0.6rem;
     max-width: 100%;
     min-height: 3.2rem;
-    padding: 0.7rem 1.2rem;
-    font-size: clamp(1rem, 2.6vw, 1.2rem);
+    padding: 0.7rem 0;
+    font-size: clamp(0.9rem, 2.4vw, 1.1rem);
+  }
+
+  .collection-duo__button span {
+    min-width: 0;
   }
 
   .collection-duo__button svg {
