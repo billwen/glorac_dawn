@@ -71,6 +71,7 @@
 .editorial-footer__links,
 .editorial-footer__newsletter-text,
 .editorial-footer__copyright,
+.editorial-footer__email-field input,
 .editorial-footer__closing p {
   font-family: inherit;
   font-size: 0.8rem;
@@ -127,13 +128,14 @@
   border-radius: 0;
   background: transparent;
   color: #43372e;
-  font-family: inherit;
-  font-size: 1.1rem;
 }
 
 .editorial-footer__email-field input::placeholder {
   color: #94877c;
   opacity: 1;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
 }
 
 .editorial-footer__email-field button {
@@ -257,7 +259,6 @@ a.editorial-footer__social-icon:hover {
 
   .editorial-footer__email-field input {
     padding: 1.2rem;
-    font-size: 1.2rem;
   }
 
   .editorial-footer__email-field button {
