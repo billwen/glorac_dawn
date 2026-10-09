@@ -289,3 +289,9 @@ a.editorial-footer__social-icon:hover {
     height: 1.4rem;
   }
 }
+
+@media screen and (max-width: 749px) {
+  .editorial-footer__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
