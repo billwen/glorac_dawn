@@ -52,7 +52,6 @@
 
 .editorial-footer__tagline {
   margin: 0.8rem 0 0;
-  white-space: nowrap;
 }
 
 .editorial-footer__heading {
@@ -60,7 +59,6 @@
   color: #43372e;
 }
 
-.editorial-footer__tagline,
 .editorial-footer__heading {
   font-family: inherit;
   font-size: 1.1rem;
@@ -69,6 +67,7 @@
   letter-spacing: 0.18em;
 }
 
+.editorial-footer__tagline,
 .editorial-footer__links,
 .editorial-footer__closing p {
   font-family: inherit;
@@ -244,7 +243,6 @@ a.editorial-footer__social-icon:hover {
     margin-bottom: 1.2rem;
   }
 
-  .editorial-footer__tagline,
   .editorial-footer__heading {
     font-size: 1rem;
   }
