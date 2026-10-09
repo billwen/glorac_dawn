@@ -48,7 +48,7 @@
         "clothes": {
           "type": "collection",
           "settings": {
-            "collection": "clothes",
+            "collection": "fashion",
             "name": "Clothes"
           }
         },

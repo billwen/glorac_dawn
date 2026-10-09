@@ -32,7 +32,7 @@
           "type": "detail",
           "settings": {
             "image": "shopify://shop_images/about_made_with_intention_3.png",
-            "collection": "clothes",
+            "collection": "fashion",
             "title": "CONSIDERED DESIGN"
           }
         }
@@ -45,10 +45,10 @@
       "settings": {
         "hero_image": "shopify://shop_images/Brand_Story.png",
         "philosophy_image": "shopify://shop_images/about_philosophy_1.png",
-        "closing_image": "shopify://shop_images/about_Footer_Banner_in_Story.png",
         "craft_link": "shopify://collections/sleepware",
         "certification_fabric_image": "shopify://shop_images/about_certified_with_care_fabric.png",
         "certification_oeko_tex_image": "shopify://shop_images/about_certified_with_care_oeko_tex.png",
+        "closing_image": "shopify://shop_images/about_Footer_Banner_in_Story.png",
         "closing_link": "shopify://collections/shop-all"
       }
     }
