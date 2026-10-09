@@ -1,0 +1,47 @@
+{% doc %}
+  Renders the main collection links shared by desktop and drawer navigation.
+
+  @param {boolean} [drawer] - Whether to use drawer menu styling.
+{% enddoc %}
+
+{%- liquid
+  assign collection_handles = 'sleepware|clothes|scarves|accessories' | split: '|'
+  assign collection_names = 'Sleepwear|Clothes|Scarves|Accessories' | split: '|'
+  assign link_prefix = 'HeaderMenu'
+  assign link_class = 'header__menu-item list-menu__item link link--text focus-inset'
+  if drawer
+    assign link_prefix = 'HeaderDrawer'
+    assign link_class = 'menu-drawer__menu-item list-menu__item link link--text focus-inset'
+  endif
+-%}
+
+{%- unless drawer -%}
+  <li>
+    <a id="HeaderMenu-collections" href="{{ routes.collections_url }}" class="{{ link_class }}">
+      <span>{{ 'glorac.collections_label' | t | escape }}</span>
+    </a>
+  </li>
+{%- endunless -%}
+
+{%- for collection_handle in collection_handles -%}
+  {%- liquid
+    assign collection_url = collections[collection_handle].url
+    if collection_url == blank
+      assign collection_url = routes.collections_url | append: '/' | append: collection_handle
+    endif
+    assign collection_name = collection_names[forloop.index0]
+  -%}
+  {%- capture localized_name -%}{%- render 'localized-theme-text', text: collection_name -%}{%- endcapture -%}
+  <li>
+    <a
+      id="{{ link_prefix }}-{{ collection_handle }}"
+      href="{{ collection_url }}"
+      class="{{ link_class }}{% if request.path == collection_url %}{% if drawer %} menu-drawer__menu-item--active{% else %} list-menu__item--active{% endif %}{% endif %}"
+      {% if request.path == collection_url %}
+        aria-current="page"
+      {% endif %}
+    >
+      <span>{{ localized_name | escape }}</span>
+    </a>
+  </li>
+{%- endfor -%}

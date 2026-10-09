@@ -19,9 +19,9 @@
     }}
   {%- endif -%}
   <div class="editorial-hero__content">
-    <p class="editorial-hero__season">{{ localized_season | escape }}</p>
     <h1 class="editorial-hero__heading">{{ localized_heading | escape | newline_to_br }}</h1>
     <p class="editorial-hero__tagline">{{ localized_tagline | escape }}</p>
+    <p class="editorial-hero__season">{{ localized_season | escape }}</p>
     {%- if section.settings.button_label != blank -%}
       <a class="editorial-hero__button" href="{{ section.settings.button_link | default: routes.all_products_collection_url | escape }}">
         <span>{{ localized_button_label | escape }}</span>

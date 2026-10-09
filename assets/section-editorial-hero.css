@@ -70,18 +70,16 @@
   justify-content: center;
   gap: 1.6rem;
   min-height: 4.4rem;
-  padding: 1.2rem 2.4rem;
-  border: 1px solid #e9e2d6;
-  background: #f9f5ed;
-  color: #43372e;
+  padding: 1.2rem 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
   font-size: clamp(1rem, 0.9vw, 1.4rem);
   line-height: 1.2;
   letter-spacing: 0.12em;
-  text-decoration: none;
-}
-
-.editorial-hero__button:hover {
-  background: #fff;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
 }
 
 .editorial-hero__quote {
@@ -149,7 +147,7 @@
     gap: 0.8rem;
     max-width: 100%;
     min-height: 3.2rem;
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 0;
     font-size: clamp(0.9rem, 2.4vw, 1.2rem);
     letter-spacing: 0.08em;
   }
