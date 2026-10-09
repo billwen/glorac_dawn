@@ -74,12 +74,13 @@
   position: absolute;
   z-index: 1;
   right: 3vw;
-  bottom: 18%;
+  bottom: 3vw;
   margin: 0;
   color: #fff;
   font-size: clamp(1.4rem, 1.6vw, 2.8rem);
   font-style: italic;
   line-height: 1.15;
+  text-align: right;
 }
 
 @media screen and (max-width: 749px) {
@@ -130,7 +131,7 @@
 
   .editorial-hero__quote {
     right: 4%;
-    bottom: 8%;
+    bottom: 4%;
     max-width: 24%;
     font-size: clamp(1.1rem, 2.8vw, 1.8rem);
     line-height: 1.2;
