@@ -1,17 +1,14 @@
-{%- capture localized_tagline -%}{%- render 'localized-theme-text', text: section.settings.tagline -%}{%- endcapture -%}
 {%- capture localized_heading -%}{%- render 'localized-theme-text', text: section.settings.heading -%}{%- endcapture -%}
 {%- style -%}
   .category-heading__row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
   .category-heading__title {
-    grid-column: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,33 +33,6 @@
     background: #aa998b;
   }
 
-  .category-heading__tagline {
-    grid-column: 3;
-    margin: 0;
-    text-align: right;
-    color: #76675b;
-    font-family: 'Times New Roman', serif;
-    font-size: clamp(0.65rem, 0.75vw, 1.2rem);
-    line-height: 1.5;
-    letter-spacing: 0.26em;
-  }
-
-  @media screen and (max-width: 989px) {
-    .category-heading__row {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 1.2rem;
-    }
-
-    .category-heading__title,
-    .category-heading__tagline {
-      grid-column: 1;
-    }
-
-    .category-heading__tagline {
-      text-align: center;
-    }
-  }
-
   @media screen and (max-width: 749px) {
     .category-heading__title {
       font-size: clamp(1.4rem, 4.6vw, 1.8rem);
@@ -75,16 +45,12 @@
       width: 2.4rem;
     }
 
-    .category-heading__tagline {
-      font-size: 0.8rem;
-    }
   }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="category-heading__row page-width">
     <h2 class="category-heading__title">{{ localized_heading | remove: '--' | strip | escape }}</h2>
-    <p class="category-heading__tagline">{{ localized_tagline | escape | newline_to_br }}</p>
   </div>
 </div>
 
@@ -102,12 +68,6 @@
       "id": "heading",
       "label": "Heading",
       "default": "SHOP BY CATEGORY"
-    },
-    {
-      "type": "textarea",
-      "id": "tagline",
-      "label": "Tagline",
-      "default": "EXCEPTIONAL PIECES\nFOR A MORE BEAUTIFUL YOU"
     },
     {
       "type": "color_scheme",
