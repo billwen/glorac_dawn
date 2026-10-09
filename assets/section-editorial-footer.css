@@ -18,8 +18,8 @@
 
 .editorial-footer__grid {
   display: grid;
-  grid-template-columns: 1.35fr 0.75fr 0.95fr 1.35fr 0.7fr;
-  gap: 4rem;
+  grid-template-columns: 1.35fr 0.75fr 0.95fr 0.95fr 1.35fr 0.7fr;
+  gap: clamp(1.6rem, 2vw, 4rem);
   padding-top: 0.8rem;
   padding-bottom: 1.3rem;
 }

@@ -13,7 +13,11 @@
   "sections": {
     "footer": {
       "type": "editorial-footer",
-      "settings": {}
+      "settings": {
+        "shop_menu": "footer_menu_shop",
+        "about_menu": "footer_menu_about",
+        "customer_care_menu": "footer_menu_customer_care"
+      }
     }
   },
   "order": [

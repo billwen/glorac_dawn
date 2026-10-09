@@ -1,10 +1,9 @@
 {{ 'section-editorial-footer.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign shop_names = 'shop_all|sleep|lounge|dresses|scarves|glow' | split: '|'
-  assign shop_handles = 'shop-all|sleep|lounge|dresses|scarves|glow' | split: '|'
-  assign about_names = 'our_story|sustainability|size_guide|care|journal|contact' | split: '|'
-  assign about_handles = 'about|sustainability|size-guide|care-guide|journal|contact' | split: '|'
+  assign shop_menu = section.settings.shop_menu | default: linklists['footer_menu_shop']
+  assign about_menu = section.settings.about_menu | default: linklists['footer_menu_about']
+  assign customer_care_menu = section.settings.customer_care_menu | default: linklists['footer_menu_customer_care']
   assign newsletter_id = 'FooterNewsletter-' | append: section.id
   assign social_platforms = 'instagram|pinterest|facebook|youtube' | split: '|'
   assign social_names = 'Instagram|Pinterest|Facebook|YouTube' | split: '|'
@@ -21,52 +20,27 @@
       <nav class="editorial-footer__nav" aria-label="{{ 'glorac.footer.shop_label' | t | escape }}">
         <h2 class="editorial-footer__heading">{{ 'glorac.footer.shop_heading' | t | escape }}</h2>
         <ul class="editorial-footer__links" role="list">
-          {%- if section.settings.shop_menu != blank -%}
-            {%- for link in section.settings.shop_menu.links -%}
-              <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-            {%- endfor -%}
-          {%- else -%}
-            {%- for name in shop_names -%}
-              {%- assign menu_translation_key = 'glorac.footer.' | append: name -%}
-              {%- assign collection_handle = shop_handles[forloop.index0] -%}
-              {%- assign collection_url = collections[collection_handle].url -%}
-              {%- if collection_url == blank -%}
-                {%- assign collection_url = routes.collections_url | append: '/' | append: collection_handle -%}
-              {%- endif -%}
-              <li><a href="{{ collection_url }}">{{ menu_translation_key | t | escape }}</a></li>
-            {%- endfor -%}
-          {%- endif -%}
+          {%- for link in shop_menu.links -%}
+            <li><a href="{{ link.url | escape }}">{{ link.title | escape }}</a></li>
+          {%- endfor -%}
         </ul>
       </nav>
 
       <nav class="editorial-footer__nav" aria-label="{{ 'glorac.footer.about_label' | t | escape }}">
         <h2 class="editorial-footer__heading">{{ 'glorac.footer.about_heading' | t | escape }}</h2>
         <ul class="editorial-footer__links" role="list">
-          {%- if section.settings.about_menu != blank -%}
-            {%- for link in section.settings.about_menu.links -%}
-              <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-            {%- endfor -%}
-          {%- else -%}
-            {%- for name in about_names -%}
-              {%- assign menu_translation_key = 'glorac.footer.' | append: name -%}
-              {%- liquid
-                assign page_handle = about_handles[forloop.index0]
-                assign page_url = pages[page_handle].url
-                if page_handle == 'about' and page_url == blank
-                  assign page_url = pages['about-us'].url | default: pages['our-story'].url
-                elsif page_handle == 'journal' and page_url == blank
-                  assign page_url = blogs['journal'].url
-                endif
-              -%}
-              <li>
-                {%- if page_url != blank -%}
-                  <a href="{{ page_url }}">{{ menu_translation_key | t | escape }}</a>
-                {%- else -%}
-                  <span>{{ menu_translation_key | t | escape }}</span>
-                {%- endif -%}
-              </li>
-            {%- endfor -%}
-          {%- endif -%}
+          {%- for link in about_menu.links -%}
+            <li><a href="{{ link.url | escape }}">{{ link.title | escape }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+
+      <nav class="editorial-footer__nav" aria-label="{{ 'glorac.footer.customer_care_label' | t | escape }}">
+        <h2 class="editorial-footer__heading">{{ 'glorac.footer.customer_care_heading' | t | escape }}</h2>
+        <ul class="editorial-footer__links" role="list">
+          {%- for link in customer_care_menu.links -%}
+            <li><a href="{{ link.url | escape }}">{{ link.title | escape }}</a></li>
+          {%- endfor -%}
         </ul>
       </nav>
 
@@ -151,7 +125,8 @@
   "enabled_on": { "groups": ["footer"] },
   "settings": [
     { "type": "link_list", "id": "shop_menu", "label": "Shop menu" },
-    { "type": "link_list", "id": "about_menu", "label": "About menu" }
+    { "type": "link_list", "id": "about_menu", "label": "About menu" },
+    { "type": "link_list", "id": "customer_care_menu", "label": "Customer care menu" }
   ],
   "presets": [{ "name": "Editorial footer" }]
 }
